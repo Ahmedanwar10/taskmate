@@ -5,7 +5,7 @@ import 'package:taskmate_app/Features/home/home_view.dart';
 import 'package:taskmate_app/Features/login/presentation/views/login_view.dart';
 import 'package:taskmate_app/Features/notification/views/notification_view.dart';
 import 'package:taskmate_app/Features/profile/views/profile_view.dart';
-import 'package:taskmate_app/Features/register/register_view.dart';
+import 'package:taskmate_app/Features/register/presentation/views/register_view.dart';
 import 'package:taskmate_app/Features/splash/splash_view.dart';
 
 class AppRoutes {

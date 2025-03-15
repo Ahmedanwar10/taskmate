@@ -21,7 +21,16 @@
       "office_projects":"مشاريع المكتب",
       "grocery_shopping_app_design":"تطبيق التسوق للبقالة",
       "tasks_group":"مجموعة المهام",
-      "welcome_to_task_mate":"مرحبا بكم في مهماتي"
+      "welcome_to_task_mate":"مرحبا بكم في مهماتي",
+      "register_successfully":"تم إنشاء الحساب بنجاح",
+      "register_success_title":"عملية ناجحة",
+      "password_confirmation_required":"تأكيد كلمة المرور مطلوب",
+      "password_confirmation_same":"كلمة المرور وتأكيد كلمة المرور يجب أن تكونا متطابقتين",
+      "Password_must_be_at_least_6_characters_long":"يجب أن تتكون كلمة المرور من 6 أحرف على الأقل",
+      "The_password_must_contain_letters_and_numbers":"يجب أن تحتوي كلمة المرور على أحرف وأرقام",
+      "invalid_email":"بريد إلكتروني غير صحيح",
+      "password_required":"كلمة المرور مطلوبة",
+      "email_required":"البريد الإلكتروني مطلوب"
 
 
     

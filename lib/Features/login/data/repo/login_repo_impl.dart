@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:taskmate_app/Features/login/data/model/user_model/user_model.dart';
-import 'package:taskmate_app/Features/login/data/service/login_repo.dart';
+import 'package:taskmate_app/Features/login/data/service/login_repo_service.dart';
 import 'package:taskmate_app/core/failure/failure.dart';
 import 'package:taskmate_app/Features/login/data/repo/login_repo.dart';
 

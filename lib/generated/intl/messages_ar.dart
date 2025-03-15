@@ -22,47 +22,73 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "already_have_account": MessageLookupByLibrary.simpleMessage(
-          "هل لديك حساب بالفعل؟ ",
+    "Password_must_be_at_least_6_characters_long":
+        MessageLookupByLibrary.simpleMessage(
+          "يجب أن تتكون كلمة المرور من 6 أحرف على الأقل",
         ),
-        "confirm_password": MessageLookupByLibrary.simpleMessage(
-          "تأكيد كلمة المرور",
+    "The_password_must_contain_letters_and_numbers":
+        MessageLookupByLibrary.simpleMessage(
+          "يجب أن تحتوي كلمة المرور على أحرف وأرقام",
         ),
-        "dont_have_account":
-            MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
-        "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
-        "enter_your_email": MessageLookupByLibrary.simpleMessage(
-          "أدخل بريدك الإلكتروني",
-        ),
-        "enter_your_password": MessageLookupByLibrary.simpleMessage(
-          "أدخل كلمة المرور",
-        ),
-        "forgot_password": MessageLookupByLibrary.simpleMessage(
-          "هل نسيت كلمة المرور؟",
-        ),
-        "grocery_shopping_app_design": MessageLookupByLibrary.simpleMessage(
-          "تطبيق التسوق للبقالة",
-        ),
-        "in_progress": MessageLookupByLibrary.simpleMessage("قيد التنفيذ"),
-        "lets_start": MessageLookupByLibrary.simpleMessage("لنبدأ"),
-        "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
-        "office_projects":
-            MessageLookupByLibrary.simpleMessage("مشاريع المكتب"),
-        "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
-        "register": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
-        "task_management": MessageLookupByLibrary.simpleMessage(
-          "إدارة المهام وقائمة المهام",
-        ),
-        "tasks_group": MessageLookupByLibrary.simpleMessage("مجموعة المهام"),
-        "title": MessageLookupByLibrary.simpleMessage("مدير المهام"),
-        "view_task": MessageLookupByLibrary.simpleMessage("عرض المهمة"),
-        "welcome":
-            MessageLookupByLibrary.simpleMessage("مرحبًا بك في TaskMate"),
-        "welcome_to_task_mate": MessageLookupByLibrary.simpleMessage(
-          "مرحبا بكم في مهماتي",
-        ),
-        "your_task_almost_done": MessageLookupByLibrary.simpleMessage(
-          "مهامك اليومية تم الانتهاء منها تقريبًا",
-        ),
-      };
+    "already_have_account": MessageLookupByLibrary.simpleMessage(
+      "هل لديك حساب بالفعل؟ ",
+    ),
+    "confirm_password": MessageLookupByLibrary.simpleMessage(
+      "تأكيد كلمة المرور",
+    ),
+    "dont_have_account": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
+    "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+    "email_required": MessageLookupByLibrary.simpleMessage(
+      "البريد الإلكتروني مطلوب",
+    ),
+    "enter_your_email": MessageLookupByLibrary.simpleMessage(
+      "أدخل بريدك الإلكتروني",
+    ),
+    "enter_your_password": MessageLookupByLibrary.simpleMessage(
+      "أدخل كلمة المرور",
+    ),
+    "forgot_password": MessageLookupByLibrary.simpleMessage(
+      "هل نسيت كلمة المرور؟",
+    ),
+    "grocery_shopping_app_design": MessageLookupByLibrary.simpleMessage(
+      "تطبيق التسوق للبقالة",
+    ),
+    "in_progress": MessageLookupByLibrary.simpleMessage("قيد التنفيذ"),
+    "invalid_email": MessageLookupByLibrary.simpleMessage(
+      "بريد إلكتروني غير صحيح",
+    ),
+    "lets_start": MessageLookupByLibrary.simpleMessage("لنبدأ"),
+    "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "office_projects": MessageLookupByLibrary.simpleMessage("مشاريع المكتب"),
+    "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+    "password_confirmation_required": MessageLookupByLibrary.simpleMessage(
+      "تأكيد كلمة المرور مطلوب",
+    ),
+    "password_confirmation_same": MessageLookupByLibrary.simpleMessage(
+      "كلمة المرور وتأكيد كلمة المرور يجب أن تكونا متطابقتين",
+    ),
+    "password_required": MessageLookupByLibrary.simpleMessage(
+      "كلمة المرور مطلوبة",
+    ),
+    "register": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+    "register_success_title": MessageLookupByLibrary.simpleMessage(
+      "عملية ناجحة",
+    ),
+    "register_successfully": MessageLookupByLibrary.simpleMessage(
+      "تم إنشاء الحساب بنجاح",
+    ),
+    "task_management": MessageLookupByLibrary.simpleMessage(
+      "إدارة المهام وقائمة المهام",
+    ),
+    "tasks_group": MessageLookupByLibrary.simpleMessage("مجموعة المهام"),
+    "title": MessageLookupByLibrary.simpleMessage("مدير المهام"),
+    "view_task": MessageLookupByLibrary.simpleMessage("عرض المهمة"),
+    "welcome": MessageLookupByLibrary.simpleMessage("مرحبًا بك في TaskMate"),
+    "welcome_to_task_mate": MessageLookupByLibrary.simpleMessage(
+      "مرحبا بكم في مهماتي",
+    ),
+    "your_task_almost_done": MessageLookupByLibrary.simpleMessage(
+      "مهامك اليومية تم الانتهاء منها تقريبًا",
+    ),
+  };
 }

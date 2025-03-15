@@ -47,7 +47,7 @@ class SplashView extends StatelessWidget {
                     color: Colors.white,
                   ),
                   onPressed: () {
-                    GoRouter.of(context).go('/login');
+                    GoRouter.of(context).go('/register');
                   },
                   text: S.of(context).lets_start,
                   textStyle: AppStyles.styleSomarSansBold16(context)

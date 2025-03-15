@@ -28,9 +28,10 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false)
-        ? locale.languageCode
-        : locale.toString();
+    final name =
+        (locale.countryCode?.isEmpty ?? false)
+            ? locale.languageCode
+            : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -214,6 +215,96 @@ class S {
     return Intl.message(
       'Welcome to TaskMate',
       name: 'welcome_to_task_mate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Account created successfully`
+  String get register_successfully {
+    return Intl.message(
+      'Account created successfully',
+      name: 'register_successfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Successful Operation`
+  String get register_success_title {
+    return Intl.message(
+      'Successful Operation',
+      name: 'register_success_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password confirmation is required`
+  String get password_confirmation_required {
+    return Intl.message(
+      'Password confirmation is required',
+      name: 'password_confirmation_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password and password confirmation must be same`
+  String get password_confirmation_same {
+    return Intl.message(
+      'Password and password confirmation must be same',
+      name: 'password_confirmation_same',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must be at least 6 characters long`
+  String get Password_must_be_at_least_6_characters_long {
+    return Intl.message(
+      'Password must be at least 6 characters long',
+      name: 'Password_must_be_at_least_6_characters_long',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The password must contain letters and numbers.`
+  String get The_password_must_contain_letters_and_numbers {
+    return Intl.message(
+      'The password must contain letters and numbers.',
+      name: 'The_password_must_contain_letters_and_numbers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid_email`
+  String get invalid_email {
+    return Intl.message(
+      'Invalid_email',
+      name: 'invalid_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `password_required`
+  String get password_required {
+    return Intl.message(
+      'password_required',
+      name: 'password_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `email_required`
+  String get email_required {
+    return Intl.message(
+      'email_required',
+      name: 'email_required',
       desc: '',
       args: [],
     );

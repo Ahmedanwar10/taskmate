@@ -51,45 +51,76 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 ? Colors.white
                 : Colors.grey,
           ),
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Form(
-              key: formKey,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(S.of(context).login, style: AppStyles.styleSomarSansBold20(context)),
-                  const SizedBox(height: 20),
-                  Text(S.of(context).email, style: AppStyles.styleSomarSansBold12(context)),
-                  CustomTextFormField(
-                    hint: S.of(context).enter_your_email,
-                    controller: emailController,
-                    keyboardType: TextInputType.emailAddress,
-                  ),
-                  const SizedBox(height: 18),
-                  Text(S.of(context).password, style: AppStyles.styleSomarSansBold12(context)),
-                  CustomTextFormField(
-                    hint: S.of(context).enter_your_password,
-                    isSecure: true,
-                    controller: passwordController,
-                  ),
-                  const SizedBox(height: 20),
-                  CustomButton(
-                    color: ColorManager.primary,
-                    width: double.infinity,
-                    height: 50,
-                    text: S.of(context).login,
-                    textStyle: AppStyles.styleSomarSansSemiBold26(context).copyWith(fontSize: 20, color: Colors.white),
-                    onPressed: () {
-                      if (formKey.currentState!.validate()) {
-                        context.read<LoginCubit>().login(
-                          email: emailController.text.trim(),
-                          password: passwordController.text.trim(),
-                        );
-                      }
-                    },
-                  ),
-                ],
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Form(
+                key: formKey,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.1),
+                    Center(
+                        child: Text(S.of(context).login,
+                            style: AppStyles.styleSomarSansBold20(context))),
+                    const SizedBox(height: 20),
+                    Text(S.of(context).email,
+                        style: AppStyles.styleSomarSansBold12(context)),
+                    CustomTextFormField(
+                      hint: S.of(context).enter_your_email,
+                      controller: emailController,
+                      keyboardType: TextInputType.emailAddress,
+                    ),
+                    const SizedBox(height: 18),
+                    Text(S.of(context).password,
+                        style: AppStyles.styleSomarSansBold12(context)),
+                    CustomTextFormField(
+                      hint: S.of(context).enter_your_password,
+                      isSecure: true,
+                      controller: passwordController,
+                    ),
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.3),
+                    CustomButton(
+                      color: ColorManager.primary,
+                      width: double.infinity,
+                      height: 50,
+                      text: S.of(context).login,
+                      textStyle: AppStyles.styleSomarSansSemiBold26(context)
+                          .copyWith(fontSize: 20, color: Colors.white),
+                      onPressed: () {
+                        if (formKey.currentState!.validate()) {
+                          context.read<LoginCubit>().login(
+                                email: emailController.text.trim(),
+                                password: passwordController.text.trim(),
+                              );
+                        }
+                      },
+                    ),
+                    const SizedBox(height: 8),
+                    GestureDetector(
+                      onTap: () {
+                        GoRouter.of(context).go('/register');
+                      },
+                      child: Center(
+                        child: RichText(
+                          text: TextSpan(
+                            children: [
+                              TextSpan(
+                                text: S.of(context).dont_have_account,
+                                style: AppStyles.styleSomarSansBold12(context),
+                              ),
+                              TextSpan(
+                                text: S.of(context).register,
+                                style: AppStyles.styleSomarSansBold12(context)
+                                    .copyWith(color: Colors.blue),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
@@ -98,5 +129,3 @@ class _LoginViewBodyState extends State<LoginViewBody> {
     );
   }
 }
-
-

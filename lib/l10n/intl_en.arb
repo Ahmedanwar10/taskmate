@@ -20,7 +20,17 @@
   "office_projects":"Office Projects",
   "grocery_shopping_app_design":"Grocery Shopping App Design",
   "tasks_group":"Tasks Group",
-  "welcome_to_task_mate":"Welcome to TaskMate"
+  "welcome_to_task_mate":"Welcome to TaskMate",
+  "register_successfully":"Account created successfully",
+  "register_success_title":"Successful Operation",
+  "password_confirmation_required":"Password confirmation is required",
+  "password_confirmation_same":"Password and password confirmation must be same",
+  "Password_must_be_at_least_6_characters_long":"Password must be at least 6 characters long",
+  "The_password_must_contain_letters_and_numbers":"The password must contain letters and numbers.",
+  "invalid_email":"Invalid_email",
+  "password_required":"password_required",
+  "email_required":"email_required"
+  
 
 
 
