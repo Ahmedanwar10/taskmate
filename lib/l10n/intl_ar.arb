@@ -1,0 +1,29 @@
+{
+    "@@locale": "ar",
+    "title": "مدير المهام",
+    "welcome": "مرحبًا بك في TaskMate",
+      "login": "تسجيل الدخول",
+      "email": "البريد الإلكتروني",
+      "enter_your_email": "أدخل بريدك الإلكتروني",
+      "password": "كلمة المرور",
+      "enter_your_password": "أدخل كلمة المرور",
+      "forgot_password": "هل نسيت كلمة المرور؟",
+      "dont_have_account": "ليس لديك حساب؟",
+      "register": "إنشاء حساب",
+      "Let’s Start": "لنبدأ",
+      "task_management": "إدارة المهام وقائمة المهام",
+      "lets_start": "لنبدأ",
+      "confirm_password": "تأكيد كلمة المرور",
+      "already_have_account": "هل لديك حساب بالفعل؟ ",
+      "your_task_almost_done":"مهامك اليومية تم الانتهاء منها تقريبًا",
+      "view_task":"عرض المهمة",
+      "in_progress":"قيد التنفيذ",
+      "office_projects":"مشاريع المكتب",
+      "grocery_shopping_app_design":"تطبيق التسوق للبقالة",
+      "tasks_group":"مجموعة المهام",
+      "welcome_to_task_mate":"مرحبا بكم في مهماتي"
+
+
+    
+    
+  }

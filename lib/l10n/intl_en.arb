@@ -1,0 +1,27 @@
+{
+    "@@locale": "en",
+    "title": "Task Manager",
+    "welcome": "Welcome to TaskMate",
+    "login": "Login",
+  "email": "Email",
+  "enter_your_email": "Enter your email",
+  "password": "Password",
+  "enter_your_password": "Enter your password",
+  "forgot_password": "Forgot Password?",
+  "dont_have_account": "Don't have an account?",
+  "register": "Register",
+  "task_management": "Task Management & To-Do List",
+  "lets_start": "Let’s Start",
+  "confirm_password": "Confirm Password",
+  "already_have_account": "Already have an account? ",
+  "your_task_almost_done":"Your today's tasks almost done",
+  "view_task":"View Task",
+  "in_progress":"In Progress",
+  "office_projects":"Office Projects",
+  "grocery_shopping_app_design":"Grocery Shopping App Design",
+  "tasks_group":"Tasks Group",
+  "welcome_to_task_mate":"Welcome to TaskMate"
+
+
+
+  }
