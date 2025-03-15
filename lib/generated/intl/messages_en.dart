@@ -55,6 +55,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "invalid_email": MessageLookupByLibrary.simpleMessage("Invalid_email"),
     "lets_start": MessageLookupByLibrary.simpleMessage("Let’s Start"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
+    "login_success_title": MessageLookupByLibrary.simpleMessage(
+      "Successful Operation",
+    ),
+    "login_successfully": MessageLookupByLibrary.simpleMessage(
+      "Login successfully",
+    ),
     "office_projects": MessageLookupByLibrary.simpleMessage("Office Projects"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "password_confirmation_required": MessageLookupByLibrary.simpleMessage(

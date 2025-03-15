@@ -59,6 +59,10 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "lets_start": MessageLookupByLibrary.simpleMessage("لنبدأ"),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "login_success_title": MessageLookupByLibrary.simpleMessage("عملية ناجحة"),
+    "login_successfully": MessageLookupByLibrary.simpleMessage(
+      "تم تسجيل الدخول بنجاح",
+    ),
     "office_projects": MessageLookupByLibrary.simpleMessage("مشاريع المكتب"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "password_confirmation_required": MessageLookupByLibrary.simpleMessage(

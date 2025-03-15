@@ -30,7 +30,9 @@
       "The_password_must_contain_letters_and_numbers":"يجب أن تحتوي كلمة المرور على أحرف وأرقام",
       "invalid_email":"بريد إلكتروني غير صحيح",
       "password_required":"كلمة المرور مطلوبة",
-      "email_required":"البريد الإلكتروني مطلوب"
+      "email_required":"البريد الإلكتروني مطلوب",
+      "login_successfully":"تم تسجيل الدخول بنجاح",
+      "login_success_title":"عملية ناجحة"
 
 
     

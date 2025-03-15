@@ -184,7 +184,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                         const SizedBox(height: 16),
                         GestureDetector(
                           onTap: () {
-                            // GoRouter.of(context).go('/login');
+                             GoRouter.of(context).go('/login');
                           },
                           child: Center(
                             child: RichText(

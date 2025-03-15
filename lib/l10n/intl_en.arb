@@ -29,7 +29,9 @@
   "The_password_must_contain_letters_and_numbers":"The password must contain letters and numbers.",
   "invalid_email":"Invalid_email",
   "password_required":"password_required",
-  "email_required":"email_required"
+  "email_required":"email_required",
+  "login_successfully":"Login successfully",
+  "login_success_title":"Successful Operation"
   
 
 
