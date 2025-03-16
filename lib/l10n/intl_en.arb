@@ -31,7 +31,16 @@
   "password_required":"password_required",
   "email_required":"email_required",
   "login_successfully":"Login successfully",
-  "login_success_title":"Successful Operation"
+  "login_success_title":"Successful Operation",
+  "update_profile":"Update Profile",
+  "change_language":"Change Language",
+  "change_theme":"Change Theme",
+  "change_password":"Change Password",
+  "logout":"Logout",
+  "delete_account":"Delete Account",
+  "delete_account_confirmation":"Are you sure you want to delete your account?",
+  "settings":"Settings",
+  "notification":"Notification"
   
 
 

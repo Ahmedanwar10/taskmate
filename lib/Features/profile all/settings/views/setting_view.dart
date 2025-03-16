@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:taskmate_app/Features/settings/views/widgets/settings_view_body.dart';
+import 'package:taskmate_app/Features/profile%20all/settings/views/widgets/settings_view_body.dart';
 
 class SettingView extends StatelessWidget {
   const SettingView({super.key});
@@ -13,7 +13,7 @@ class SettingView extends StatelessWidget {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
-            GoRouter.of(context).go('/home');
+            GoRouter.of(context).go('/profile');
           },
         ),
         centerTitle: true,

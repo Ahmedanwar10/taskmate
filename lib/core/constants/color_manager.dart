@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class ColorManager {
   static const Color primary = Color(0xFF5A2ECC);
-  static const Color softLavender = Color(0xFFF4F2FE); // لافندر ناعم
+  static const Color white = Color(0xFFFFFFFF); // لافندر ناعم
   static const Color mintWhite = Color(0xFFF8FDFA); // أبيض ممزوج بالنعناع
   static const Color softWhite = Color(0xFFFCFFFD); // أبيض ناعم
   static const Color pureWhite = Color(0xFFFFFFFF); // أبيض نقي

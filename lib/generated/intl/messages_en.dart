@@ -33,8 +33,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "already_have_account": MessageLookupByLibrary.simpleMessage(
       "Already have an account? ",
     ),
+    "change_language": MessageLookupByLibrary.simpleMessage("Change Language"),
+    "change_password": MessageLookupByLibrary.simpleMessage("Change Password"),
+    "change_theme": MessageLookupByLibrary.simpleMessage("Change Theme"),
     "confirm_password": MessageLookupByLibrary.simpleMessage(
       "Confirm Password",
+    ),
+    "delete_account": MessageLookupByLibrary.simpleMessage("Delete Account"),
+    "delete_account_confirmation": MessageLookupByLibrary.simpleMessage(
+      "Are you sure you want to delete your account?",
     ),
     "dont_have_account": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account?",
@@ -61,6 +68,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "login_successfully": MessageLookupByLibrary.simpleMessage(
       "Login successfully",
     ),
+    "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+    "notification": MessageLookupByLibrary.simpleMessage("Notification"),
     "office_projects": MessageLookupByLibrary.simpleMessage("Office Projects"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "password_confirmation_required": MessageLookupByLibrary.simpleMessage(
@@ -79,11 +88,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "register_successfully": MessageLookupByLibrary.simpleMessage(
       "Account created successfully",
     ),
+    "settings": MessageLookupByLibrary.simpleMessage("Settings"),
     "task_management": MessageLookupByLibrary.simpleMessage(
       "Task Management & To-Do List",
     ),
     "tasks_group": MessageLookupByLibrary.simpleMessage("Tasks Group"),
     "title": MessageLookupByLibrary.simpleMessage("Task Manager"),
+    "update_profile": MessageLookupByLibrary.simpleMessage("Update Profile"),
     "view_task": MessageLookupByLibrary.simpleMessage("View Task"),
     "welcome": MessageLookupByLibrary.simpleMessage("Welcome to TaskMate"),
     "welcome_to_task_mate": MessageLookupByLibrary.simpleMessage(

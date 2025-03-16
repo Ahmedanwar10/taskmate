@@ -5,7 +5,8 @@ import 'package:taskmate_app/Features/home/widgets/inprogress_section.dart';
 import 'package:taskmate_app/Features/home/widgets/prograss_card.dart';
 import 'package:taskmate_app/Features/home/widgets/task_card_model.dart';
 import 'package:taskmate_app/Features/home/widgets/task_group_item.dart';
-import 'package:taskmate_app/Features/profile/views/widgets/avatar_profile.dart';
+import 'package:taskmate_app/Features/profile%20all/profile/views/widgets/avatar_profile.dart';
+import 'package:taskmate_app/core/common/widgets/header_home.dart';
 import 'package:taskmate_app/core/constants/assets.dart';
 import 'package:taskmate_app/generated/l10n.dart';
 
@@ -23,7 +24,7 @@ class HomeViewBody extends StatelessWidget {
             child: Column(
               children: [
                 const SizedBox(height: 20),
-                _buildHeader(context),
+                const HeaderHome(),
                 const SizedBox(height: 40),
                 ProgressCard(onTap: () {}, progress: 0.8),
                 const SizedBox(height: 20),
@@ -44,32 +45,32 @@ class HomeViewBody extends StatelessWidget {
     );
   }
 
-  Widget _buildHeader(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        ProfileAvatar(
-          imagePath: Assets.imagesIMG20240225174536993,
-          onTap: () => GoRouter.of(context).go('/profile'),
-        ),
-        const SizedBox(width: 13),
-        const Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Text('Welcome to TaskMate'),
-            SizedBox(height: 4.5),
-            Text('Ahmed Anwar'),
-          ],
-        ),
-        const Spacer(),
-        IconButton(
-          icon: const Icon(Icons.notifications_sharp, color: Colors.black),
-          onPressed: () => GoRouter.of(context).go('/notification'),
-        ),
-      ],
-    );
-  }
+  // Widget _buildHeader(BuildContext context) {
+  //   return Row(
+  //     crossAxisAlignment: CrossAxisAlignment.start,
+  //     children: [
+  //       ProfileAvatar(
+  //         imagePath: Assets.imagesIMG20240225174536993,
+  //         onTap: () => GoRouter.of(context).go('/profile'),
+  //       ),
+  //       const SizedBox(width: 13),
+  //       const Column(
+  //         crossAxisAlignment: CrossAxisAlignment.start,
+  //         mainAxisAlignment: MainAxisAlignment.start,
+  //         children: [
+  //           Text('Welcome to TaskMate'),
+  //           SizedBox(height: 4.5),
+  //           Text('Ahmed Anwar'),
+  //         ],
+  //       ),
+  //       const Spacer(),
+  //       IconButton(
+  //         icon: const Icon(Icons.notifications_sharp, color: Colors.black),
+  //         onPressed: () => GoRouter.of(context).go('/notification'),
+  //       ),
+  //     ],
+  //   );
+  // }
 
   Widget _buildTaskGroup(BuildContext context) {
     return TaskGroupItem(

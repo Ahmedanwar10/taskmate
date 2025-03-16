@@ -32,7 +32,16 @@
       "password_required":"كلمة المرور مطلوبة",
       "email_required":"البريد الإلكتروني مطلوب",
       "login_successfully":"تم تسجيل الدخول بنجاح",
-      "login_success_title":"عملية ناجحة"
+      "login_success_title":"عملية ناجحة",
+      "update_profile":"تحديث الملف الشخصي",
+      "change_language":"تغيير اللغة",
+      "change_theme":"تغيير السمة",
+      "change_password":"تغيير كلمة المرور",
+      "logout":"تسجيل الخروج",
+      "delete_account":"حذف الحساب",
+      "delete_account_confirmation":"هل تريد حذف حسابك؟",
+      "settings":"الإعدادات",
+      "notification":"الإشعارات"
 
 
     

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:taskmate_app/Features/home/home_view.dart';
 import 'package:taskmate_app/Features/home/widgets/home_view_body.dart';
-import 'package:taskmate_app/Features/profile/views/profile_view.dart';
+import 'package:taskmate_app/Features/profile%20all/profile/views/profile_view.dart';
 
 class CustomBottomNavBar extends StatefulWidget {
   const CustomBottomNavBar({super.key});
@@ -15,7 +15,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
   int currentIndex = 0;
   final PageController pageController = PageController(initialPage: 0);
 
-  final List<Widget> pages = [
+  final List<Widget> pages = const[
     HomeViewBody(),
     CalendarView(),
     FilesView(),

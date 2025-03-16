@@ -33,8 +33,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "already_have_account": MessageLookupByLibrary.simpleMessage(
       "هل لديك حساب بالفعل؟ ",
     ),
+    "change_language": MessageLookupByLibrary.simpleMessage("تغيير اللغة"),
+    "change_password": MessageLookupByLibrary.simpleMessage(
+      "تغيير كلمة المرور",
+    ),
+    "change_theme": MessageLookupByLibrary.simpleMessage("تغيير السمة"),
     "confirm_password": MessageLookupByLibrary.simpleMessage(
       "تأكيد كلمة المرور",
+    ),
+    "delete_account": MessageLookupByLibrary.simpleMessage("حذف الحساب"),
+    "delete_account_confirmation": MessageLookupByLibrary.simpleMessage(
+      "هل تريد حذف حسابك؟",
     ),
     "dont_have_account": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
@@ -63,6 +72,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "login_successfully": MessageLookupByLibrary.simpleMessage(
       "تم تسجيل الدخول بنجاح",
     ),
+    "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+    "notification": MessageLookupByLibrary.simpleMessage("الإشعارات"),
     "office_projects": MessageLookupByLibrary.simpleMessage("مشاريع المكتب"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "password_confirmation_required": MessageLookupByLibrary.simpleMessage(
@@ -81,11 +92,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "register_successfully": MessageLookupByLibrary.simpleMessage(
       "تم إنشاء الحساب بنجاح",
     ),
+    "settings": MessageLookupByLibrary.simpleMessage("الإعدادات"),
     "task_management": MessageLookupByLibrary.simpleMessage(
       "إدارة المهام وقائمة المهام",
     ),
     "tasks_group": MessageLookupByLibrary.simpleMessage("مجموعة المهام"),
     "title": MessageLookupByLibrary.simpleMessage("مدير المهام"),
+    "update_profile": MessageLookupByLibrary.simpleMessage(
+      "تحديث الملف الشخصي",
+    ),
     "view_task": MessageLookupByLibrary.simpleMessage("عرض المهمة"),
     "welcome": MessageLookupByLibrary.simpleMessage("مرحبًا بك في TaskMate"),
     "welcome_to_task_mate": MessageLookupByLibrary.simpleMessage(
