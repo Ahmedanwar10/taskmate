@@ -13,22 +13,13 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: BlocProvider(
         create: (context) => LoginCubit(
           LoginRepoImpl(
             loginService: LoginService(DioWrapper()), // ✅ استخدام DioWrapper
           ),
         ),
-        child: Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(Assets.imagesBackgroundImage),
-              fit: BoxFit.cover,
-            ),
-          ),
-          child: const LoginViewBody(),
-        ),
+        child: const LoginViewBody(),
       ),
     );
   }

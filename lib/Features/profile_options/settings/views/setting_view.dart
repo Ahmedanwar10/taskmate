@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:taskmate_app/Features/profile%20all/settings/views/widgets/settings_view_body.dart';
+import 'package:taskmate_app/Features/profile_options/settings/views/widgets/settings_view_body.dart';
+import 'package:taskmate_app/core/app_style.dart';
+import 'package:taskmate_app/generated/l10n.dart';
 
 class SettingView extends StatelessWidget {
   const SettingView({super.key});
@@ -17,9 +19,12 @@ class SettingView extends StatelessWidget {
           },
         ),
         centerTitle: true,
-        title: const Text('Settings'),
+        title: Text(
+                    S.of(context).settings,
+                    style: AppStyles.styleSomarSansBold20black(context),
+                  ),
       ),
-      body: SettingViewBody(),
+      body: const SettingViewBody(),
     );
   }
 }

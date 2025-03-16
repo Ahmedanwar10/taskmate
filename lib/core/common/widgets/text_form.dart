@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:taskmate_app/core/app_style.dart';
 
 class CustomTextFormField extends StatefulWidget {
   const CustomTextFormField({
@@ -22,6 +23,7 @@ class CustomTextFormField extends StatefulWidget {
   final List<TextInputFormatter>? inputFormatters;
   final TextInputType? keyboardType;
   final String? Function(String?)? validator;
+
 
   @override
   State<CustomTextFormField> createState() => _CustomTextFormFieldState();
@@ -48,6 +50,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       inputFormatters: widget.inputFormatters,
       cursorColor: Theme.of(context).primaryColor,
       obscureText: widget.isSecure ? !_isPasswordVisible : false,
+       style:AppStyles.styleSomarSanssemiBold10(context),
       decoration: InputDecoration(
         suffixIcon: widget.isSecure
             ? IconButton(
@@ -68,10 +71,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         fillColor: widget.enabled
             ? Theme.of(context).colorScheme.secondary
             : Theme.of(context).colorScheme.secondary.withOpacity(0.5),
-        hintStyle: TextStyle(
-          fontSize: 14,
-          color: Colors.grey[600],
-        ),
+        hintStyle:  AppStyles.styleSomarSansBold18(context).copyWith(fontSize: 8),
         border: createBorder(),
         enabledBorder: createBorder(),
         focusedBorder: createBorder(Theme.of(context).primaryColor),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:taskmate_app/core/constants/color_manager.dart';
 
 abstract class AppStyles {
   static TextStyle styleSomarSansBold20(BuildContext context) => TextStyle(
@@ -12,7 +13,7 @@ abstract class AppStyles {
   static TextStyle styleSomarSansBold18(BuildContext context) => TextStyle(
         color: Theme.of(context).brightness == Brightness.dark
             ? Colors.black
-            : Colors.white, // بنفسجي رئيسي
+            : Colors.grey, // بنفسجي رئيسي
         fontFamily: 'SomarSans',
         fontSize: 20,
         fontWeight: FontWeight.bold,
@@ -24,6 +25,15 @@ abstract class AppStyles {
             : const Color(0xff2C2C54), // أزرق داكن
         fontFamily: 'SomarSans',
         fontSize: 18,
+        fontWeight: FontWeight.bold,
+      );
+      
+  static TextStyle styleSomarSanssemiBold10(BuildContext context) => TextStyle(
+        color: Theme.of(context).brightness == Brightness.dark
+            ? ColorManager.black
+            : ColorManager.lightGrey, // أزرق داكن
+        fontFamily: 'SomarSans',
+        fontSize: 14,
         fontWeight: FontWeight.bold,
       );
 

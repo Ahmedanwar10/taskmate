@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
-import 'package:taskmate_app/Features/home/home_view.dart';
+import 'package:taskmate_app/Features/all_tasks/views/all_tasks_view.dart';
+import 'package:taskmate_app/Features/calender/presentation/views/calender_view.dart';
 import 'package:taskmate_app/Features/home/widgets/home_view_body.dart';
-import 'package:taskmate_app/Features/profile%20all/profile/views/profile_view.dart';
+import 'package:taskmate_app/Features/profile_options/profile/views/profile_view.dart';
+import 'package:taskmate_app/Features/profile_options/settings/views/setting_view.dart';
 
 class CustomBottomNavBar extends StatefulWidget {
   const CustomBottomNavBar({super.key});
@@ -20,7 +22,8 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
     CalendarView(),
     FilesView(),
     ProfileView(),
-  ];
+    SettingView(),
+    ];
 
   @override
   void initState() {
@@ -127,26 +130,6 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
   }
 }
 
-// صفحات إضافية لمنع الأخطاء
-class CalendarView extends StatelessWidget {
-  const CalendarView({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body:
-          Center(child: Text('Calendar Page', style: TextStyle(fontSize: 24))),
-    );
-  }
-}
 
-class FilesView extends StatelessWidget {
-  const FilesView({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(child: Text('Files Page', style: TextStyle(fontSize: 24))),
-    );
-  }
-}

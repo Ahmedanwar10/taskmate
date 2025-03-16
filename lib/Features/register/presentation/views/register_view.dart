@@ -17,14 +17,7 @@ class RegisterView extends StatelessWidget {
         create: (context) => RegisterCubit(
           RegisterRepoImpl(registerService:RegisterService(DioWrapper()))
         ),
-        child: Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(Assets.imagesBackgroundImage),
-                fit: BoxFit.cover,
-              ),
-            ),
-            child: const RegisterViewBody()),
+        child: const RegisterViewBody(),
       ),
     );
   }

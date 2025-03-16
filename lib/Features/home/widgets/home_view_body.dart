@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:go_router/go_router.dart';
 import 'package:taskmate_app/Features/home/widgets/inprogress_section.dart';
 import 'package:taskmate_app/Features/home/widgets/prograss_card.dart';
 import 'package:taskmate_app/Features/home/widgets/task_card_model.dart';
 import 'package:taskmate_app/Features/home/widgets/task_group_item.dart';
-import 'package:taskmate_app/Features/profile%20all/profile/views/widgets/avatar_profile.dart';
 import 'package:taskmate_app/core/common/widgets/header_home.dart';
 import 'package:taskmate_app/core/constants/assets.dart';
 import 'package:taskmate_app/generated/l10n.dart';

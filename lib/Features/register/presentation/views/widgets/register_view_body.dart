@@ -97,7 +97,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                     dialogType: DialogType.success,
                     onOkPressed: () {
                       GoRouter.of(context)
-                          .go('/login'); // ✅ الانتقال يتم بعد الضغط على OK
+                          .go('/login'); 
                     },
                   );
                 } else if (state is RegisterFailure) {

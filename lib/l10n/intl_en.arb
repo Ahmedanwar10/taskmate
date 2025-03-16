@@ -40,7 +40,14 @@
   "delete_account":"Delete Account",
   "delete_account_confirmation":"Are you sure you want to delete your account?",
   "settings":"Settings",
-  "notification":"Notification"
+  "notification":"Notification",
+  "data_not_valid":"Data not valid or incomplete",
+  "language":"Language",
+  "theme":"Theme",
+  "english":"English",
+  "arabic":"Arabic",
+  "light":"Light",
+  "dark":"Dark"
   
 
 

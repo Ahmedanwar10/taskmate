@@ -33,11 +33,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "already_have_account": MessageLookupByLibrary.simpleMessage(
       "Already have an account? ",
     ),
+    "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
     "change_language": MessageLookupByLibrary.simpleMessage("Change Language"),
     "change_password": MessageLookupByLibrary.simpleMessage("Change Password"),
     "change_theme": MessageLookupByLibrary.simpleMessage("Change Theme"),
     "confirm_password": MessageLookupByLibrary.simpleMessage(
       "Confirm Password",
+    ),
+    "dark": MessageLookupByLibrary.simpleMessage("Dark"),
+    "data_not_valid": MessageLookupByLibrary.simpleMessage(
+      "Data not valid or incomplete",
     ),
     "delete_account": MessageLookupByLibrary.simpleMessage("Delete Account"),
     "delete_account_confirmation": MessageLookupByLibrary.simpleMessage(
@@ -48,6 +53,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "email_required": MessageLookupByLibrary.simpleMessage("email_required"),
+    "english": MessageLookupByLibrary.simpleMessage("English"),
     "enter_your_email": MessageLookupByLibrary.simpleMessage(
       "Enter your email",
     ),
@@ -60,7 +66,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "in_progress": MessageLookupByLibrary.simpleMessage("In Progress"),
     "invalid_email": MessageLookupByLibrary.simpleMessage("Invalid_email"),
+    "language": MessageLookupByLibrary.simpleMessage("Language"),
     "lets_start": MessageLookupByLibrary.simpleMessage("Let’s Start"),
+    "light": MessageLookupByLibrary.simpleMessage("Light"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
     "login_success_title": MessageLookupByLibrary.simpleMessage(
       "Successful Operation",
@@ -93,6 +101,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Task Management & To-Do List",
     ),
     "tasks_group": MessageLookupByLibrary.simpleMessage("Tasks Group"),
+    "theme": MessageLookupByLibrary.simpleMessage("Theme"),
     "title": MessageLookupByLibrary.simpleMessage("Task Manager"),
     "update_profile": MessageLookupByLibrary.simpleMessage("Update Profile"),
     "view_task": MessageLookupByLibrary.simpleMessage("View Task"),

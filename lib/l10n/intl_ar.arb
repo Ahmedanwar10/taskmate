@@ -41,7 +41,14 @@
       "delete_account":"حذف الحساب",
       "delete_account_confirmation":"هل تريد حذف حسابك؟",
       "settings":"الإعدادات",
-      "notification":"الإشعارات"
+      "notification":"الإشعارات",
+      "data_not_valid":"بيانات غير صحيحة أو غير مكتملة",
+      "language":"اللغة",
+      "theme":"السمة",
+      "english":"الانجليزية",
+      "arabic":"العربية",
+      "light":"الفاتحة",
+      "dark":"الظلام"
 
 
     

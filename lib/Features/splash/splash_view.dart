@@ -4,6 +4,7 @@ import 'package:taskmate_app/core/app_style.dart';
 import 'package:taskmate_app/core/common/widgets/custtom_button.dart';
 import 'package:taskmate_app/core/constants/assets.dart';
 import 'package:taskmate_app/core/constants/color_manager.dart';
+import 'package:taskmate_app/core/constants/values.dart';
 import 'package:taskmate_app/core/resources/font_manager.dart';
 import 'package:taskmate_app/generated/l10n.dart'; // استيراد ملف الترجمة
 
@@ -32,7 +33,7 @@ class SplashView extends StatelessWidget {
               Text(
                 S.of(context).task_management, // استبدال النصوص بالترجمة
                 style: const TextStyle(
-                  fontSize: FontSizeManager.s22,
+                  fontSize: AppSize.s20,
                   fontWeight: FontWeightManager.regular,
                 ),
               ),

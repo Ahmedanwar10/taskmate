@@ -33,6 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "already_have_account": MessageLookupByLibrary.simpleMessage(
       "هل لديك حساب بالفعل؟ ",
     ),
+    "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
     "change_language": MessageLookupByLibrary.simpleMessage("تغيير اللغة"),
     "change_password": MessageLookupByLibrary.simpleMessage(
       "تغيير كلمة المرور",
@@ -40,6 +41,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "change_theme": MessageLookupByLibrary.simpleMessage("تغيير السمة"),
     "confirm_password": MessageLookupByLibrary.simpleMessage(
       "تأكيد كلمة المرور",
+    ),
+    "dark": MessageLookupByLibrary.simpleMessage("الظلام"),
+    "data_not_valid": MessageLookupByLibrary.simpleMessage(
+      "بيانات غير صحيحة أو غير مكتملة",
     ),
     "delete_account": MessageLookupByLibrary.simpleMessage("حذف الحساب"),
     "delete_account_confirmation": MessageLookupByLibrary.simpleMessage(
@@ -50,6 +55,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "email_required": MessageLookupByLibrary.simpleMessage(
       "البريد الإلكتروني مطلوب",
     ),
+    "english": MessageLookupByLibrary.simpleMessage("الانجليزية"),
     "enter_your_email": MessageLookupByLibrary.simpleMessage(
       "أدخل بريدك الإلكتروني",
     ),
@@ -66,7 +72,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "invalid_email": MessageLookupByLibrary.simpleMessage(
       "بريد إلكتروني غير صحيح",
     ),
+    "language": MessageLookupByLibrary.simpleMessage("اللغة"),
     "lets_start": MessageLookupByLibrary.simpleMessage("لنبدأ"),
+    "light": MessageLookupByLibrary.simpleMessage("الفاتحة"),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "login_success_title": MessageLookupByLibrary.simpleMessage("عملية ناجحة"),
     "login_successfully": MessageLookupByLibrary.simpleMessage(
@@ -97,6 +105,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "إدارة المهام وقائمة المهام",
     ),
     "tasks_group": MessageLookupByLibrary.simpleMessage("مجموعة المهام"),
+    "theme": MessageLookupByLibrary.simpleMessage("السمة"),
     "title": MessageLookupByLibrary.simpleMessage("مدير المهام"),
     "update_profile": MessageLookupByLibrary.simpleMessage(
       "تحديث الملف الشخصي",

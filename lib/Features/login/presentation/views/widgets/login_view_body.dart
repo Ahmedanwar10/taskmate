@@ -58,7 +58,12 @@ class _LoginViewBodyState extends State<LoginViewBody> {
     return BlocConsumer<LoginCubit, LoginState>(
       listener: (context, state) {
         if (state is LoginFailure) {
-          showAwesomeDialouge(context, message: state.errorMessage);
+          setState(() => isLoading = false);
+          showAwesomeDialouge(
+            context,
+                    message: state.errorMessage,
+                    buttonColor: Colors.red,
+            );
         }
         if (state is LoginSuccess) {
            

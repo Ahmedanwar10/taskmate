@@ -8,23 +8,24 @@ import 'package:taskmate_app/core/theme/theme.dart';
 part 'theme_state.dart';
 
 class ThemeCubit extends Cubit<ThemeState> {
-  ThemeCubit() : super(ThemeInitial());
+  ThemeCubit()
+      : super(ThemeChanged(
+            Hive.box<int>(kThemeBox).get(0, defaultValue: 0) == 1
+                ? AppTheme.darkMode
+                : AppTheme.lightMode));
 
-  ThemeData _themeData =
-      Hive.box<int>(kThemeBox).get(0) == 1 ? darkMode : lightMode;
-  ThemeData get themeData => _themeData;
-  set themeData(ThemeData themeData) {
-    _themeData = themeData;
+  ThemeData get themeData {
+    if (state is ThemeChanged) {
+      return (state as ThemeChanged).themeData;
+    }
+    return AppTheme.lightMode;
   }
 
   void toggleTheme() {
-    if (_themeData == lightMode) {
-      _themeData = darkMode;
-      Hive.box<int>(kThemeBox).put(0, 1);
-    } else {
-      _themeData = lightMode;
-      Hive.box<int>(kThemeBox).put(0, 0);
-    }
-    emit(ThemeInitial());
+    final isDarkMode = themeData == AppTheme.lightMode;
+    final newTheme = isDarkMode ? AppTheme.darkMode : AppTheme.lightMode;
+    Hive.box<int>(kThemeBox).put(0, isDarkMode ? 1 : 0);
+
+    emit(ThemeChanged(newTheme));
   }
 }

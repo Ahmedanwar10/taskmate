@@ -4,7 +4,8 @@ import 'package:taskmate_app/Features/forgotpassword/forgot_password.dart';
 import 'package:taskmate_app/Features/home/home_view.dart';
 import 'package:taskmate_app/Features/login/presentation/views/login_view.dart';
 import 'package:taskmate_app/Features/notification/views/notification_view.dart';
-import 'package:taskmate_app/Features/profile%20all/profile/views/profile_view.dart';
+import 'package:taskmate_app/Features/profile_options/profile/views/profile_view.dart';
+import 'package:taskmate_app/Features/profile_options/settings/views/setting_view.dart';
 import 'package:taskmate_app/Features/register/presentation/views/register_view.dart';
 import 'package:taskmate_app/Features/splash/splash_view.dart';
 
@@ -56,6 +57,10 @@ class AppRoutes {
       GoRoute(
         path: notificationRoute,
         builder: (context, state) => const NotificationView(),
+      ),
+      GoRoute(
+        path: settingsRoute,
+        builder: (context, state) => const SettingView(),
       ),
     ],
   );
