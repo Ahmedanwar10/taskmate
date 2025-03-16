@@ -47,7 +47,14 @@
   "english":"English",
   "arabic":"Arabic",
   "light":"Light",
-  "dark":"Dark"
+  "dark":"Dark",
+  "confirm_exit_registration":  "Confirm exit registration",
+  "are_you_sure_you_want_to_logout":"Are you sure you want to logout?",
+  "cancel":"Cancel",
+  "old_password":"Old Password",
+  "new_password":"New Password",
+  "confirm_new_password":"Confirm New Password",
+  "save":"Save"
   
 
 

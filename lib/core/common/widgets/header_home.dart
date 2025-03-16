@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:taskmate_app/Features/profile_options/profile/views/widgets/avatar_profile.dart';
 import 'package:taskmate_app/core/constants/assets.dart';
 
@@ -10,7 +11,8 @@ class HeaderHome extends StatelessWidget {
     return const Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        ProfileAvatar(
+       
+        const ProfileAvatar(
           imagePath: Assets.imagesIMG20240225174536993,
         // onTap: () => GoRouter.of(context).go('/profile'),
         ),

@@ -34,7 +34,7 @@ class ThemeSetting extends StatelessWidget {
                   Expanded(
                     child: Text(
                       S.of(context).theme,
-                      style: AppStyles.styleSomarSansBold20black(context),
+                      style: AppStyles.styleSomarSanssemiBold10(context),
                     ),
                   ),
                   Switch(

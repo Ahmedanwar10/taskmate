@@ -23,7 +23,6 @@ class SettingViewBody extends StatelessWidget {
               const SizedBox(height: 30),
               Container(
                 width: double.infinity,
-                height: 100,
                 padding: const EdgeInsets.all(10),
                 decoration: const BoxDecoration(
                   color: ColorManager.white,
@@ -34,7 +33,7 @@ class SettingViewBody extends StatelessWidget {
                   children: [
                     Text(
                       S.of(context).language,
-                      style: AppStyles.styleSomarSansBold20black(context),
+                      style: AppStyles.styleSomarSanssemiBold10(context),
                     ),
                     Switch(
                       value: isArabic,

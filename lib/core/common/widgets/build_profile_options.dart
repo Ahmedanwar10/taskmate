@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:taskmate_app/core/app_style.dart';
 import 'package:taskmate_app/core/constants/color_manager.dart';
 
 class BuildProfileOptions extends StatelessWidget {
@@ -20,7 +21,7 @@ class BuildProfileOptions extends StatelessWidget {
         ),
         child: ListTile(
           leading: Icon(icon, color: Colors.black),
-          title: Text(title, style: const TextStyle(fontSize: 16)),
+          title: Text(title, style: AppStyles.styleSomarSanssemiBold10(context)),
           trailing: const Icon(Icons.arrow_forward_ios, color: Colors.black, size: 18),
           onTap: onTap,
         ),

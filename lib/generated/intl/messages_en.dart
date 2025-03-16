@@ -34,9 +34,19 @@ class MessageLookup extends MessageLookupByLibrary {
       "Already have an account? ",
     ),
     "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
+    "are_you_sure_you_want_to_logout": MessageLookupByLibrary.simpleMessage(
+      "Are you sure you want to logout?",
+    ),
+    "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "change_language": MessageLookupByLibrary.simpleMessage("Change Language"),
     "change_password": MessageLookupByLibrary.simpleMessage("Change Password"),
     "change_theme": MessageLookupByLibrary.simpleMessage("Change Theme"),
+    "confirm_exit_registration": MessageLookupByLibrary.simpleMessage(
+      "Confirm exit registration",
+    ),
+    "confirm_new_password": MessageLookupByLibrary.simpleMessage(
+      "Confirm New Password",
+    ),
     "confirm_password": MessageLookupByLibrary.simpleMessage(
       "Confirm Password",
     ),
@@ -77,8 +87,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "Login successfully",
     ),
     "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+    "new_password": MessageLookupByLibrary.simpleMessage("New Password"),
     "notification": MessageLookupByLibrary.simpleMessage("Notification"),
     "office_projects": MessageLookupByLibrary.simpleMessage("Office Projects"),
+    "old_password": MessageLookupByLibrary.simpleMessage("Old Password"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "password_confirmation_required": MessageLookupByLibrary.simpleMessage(
       "Password confirmation is required",
@@ -96,6 +108,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "register_successfully": MessageLookupByLibrary.simpleMessage(
       "Account created successfully",
     ),
+    "save": MessageLookupByLibrary.simpleMessage("Save"),
     "settings": MessageLookupByLibrary.simpleMessage("Settings"),
     "task_management": MessageLookupByLibrary.simpleMessage(
       "Task Management & To-Do List",

@@ -449,6 +449,66 @@ class S {
   String get dark {
     return Intl.message('Dark', name: 'dark', desc: '', args: []);
   }
+
+  /// `Confirm exit registration`
+  String get confirm_exit_registration {
+    return Intl.message(
+      'Confirm exit registration',
+      name: 'confirm_exit_registration',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to logout?`
+  String get are_you_sure_you_want_to_logout {
+    return Intl.message(
+      'Are you sure you want to logout?',
+      name: 'are_you_sure_you_want_to_logout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message('Cancel', name: 'cancel', desc: '', args: []);
+  }
+
+  /// `Old Password`
+  String get old_password {
+    return Intl.message(
+      'Old Password',
+      name: 'old_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New Password`
+  String get new_password {
+    return Intl.message(
+      'New Password',
+      name: 'new_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm New Password`
+  String get confirm_new_password {
+    return Intl.message(
+      'Confirm New Password',
+      name: 'confirm_new_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save`
+  String get save {
+    return Intl.message('Save', name: 'save', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

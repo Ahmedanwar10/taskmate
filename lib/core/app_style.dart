@@ -31,7 +31,7 @@ abstract class AppStyles {
   static TextStyle styleSomarSanssemiBold10(BuildContext context) => TextStyle(
         color: Theme.of(context).brightness == Brightness.dark
             ? ColorManager.black
-            : ColorManager.lightGrey, // أزرق داكن
+            : ColorManager.dark, // أزرق داكن
         fontFamily: 'SomarSans',
         fontSize: 14,
         fontWeight: FontWeight.bold,

@@ -13,15 +13,15 @@ class SettingView extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () {
-            GoRouter.of(context).go('/profile');
+            GoRouter.of(context).go('/bottomNavBar');
           },
         ),
         centerTitle: true,
         title: Text(
                     S.of(context).settings,
-                    style: AppStyles.styleSomarSansBold20black(context),
+                    style: AppStyles.styleSomarSanssemiBold10(context),
                   ),
       ),
       body: const SettingViewBody(),

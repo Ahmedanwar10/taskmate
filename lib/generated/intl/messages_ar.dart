@@ -34,11 +34,21 @@ class MessageLookup extends MessageLookupByLibrary {
       "هل لديك حساب بالفعل؟ ",
     ),
     "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
+    "are_you_sure_you_want_to_logout": MessageLookupByLibrary.simpleMessage(
+      "هل أنت متأكد أنك تريد تسجيل الخروج؟",
+    ),
+    "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "change_language": MessageLookupByLibrary.simpleMessage("تغيير اللغة"),
     "change_password": MessageLookupByLibrary.simpleMessage(
       "تغيير كلمة المرور",
     ),
     "change_theme": MessageLookupByLibrary.simpleMessage("تغيير السمة"),
+    "confirm_exit_registration": MessageLookupByLibrary.simpleMessage(
+      "تأكيد تسجيل الخروج",
+    ),
+    "confirm_new_password": MessageLookupByLibrary.simpleMessage(
+      "تأكيد كلمة المرور الجديدة",
+    ),
     "confirm_password": MessageLookupByLibrary.simpleMessage(
       "تأكيد كلمة المرور",
     ),
@@ -81,8 +91,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "تم تسجيل الدخول بنجاح",
     ),
     "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+    "new_password": MessageLookupByLibrary.simpleMessage("كلمة المرور الجديدة"),
     "notification": MessageLookupByLibrary.simpleMessage("الإشعارات"),
     "office_projects": MessageLookupByLibrary.simpleMessage("مشاريع المكتب"),
+    "old_password": MessageLookupByLibrary.simpleMessage("كلمة المرور القديمة"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "password_confirmation_required": MessageLookupByLibrary.simpleMessage(
       "تأكيد كلمة المرور مطلوب",
@@ -100,6 +112,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "register_successfully": MessageLookupByLibrary.simpleMessage(
       "تم إنشاء الحساب بنجاح",
     ),
+    "save": MessageLookupByLibrary.simpleMessage("حفظ"),
     "settings": MessageLookupByLibrary.simpleMessage("الإعدادات"),
     "task_management": MessageLookupByLibrary.simpleMessage(
       "إدارة المهام وقائمة المهام",

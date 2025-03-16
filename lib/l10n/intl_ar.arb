@@ -48,7 +48,16 @@
       "english":"الانجليزية",
       "arabic":"العربية",
       "light":"الفاتحة",
-      "dark":"الظلام"
+      "dark":"الظلام",
+      "confirm_exit_registration":  "تأكيد تسجيل الخروج",
+      "are_you_sure_you_want_to_logout":"هل أنت متأكد أنك تريد تسجيل الخروج؟",
+      "cancel":"إلغاء",
+      "old_password":"كلمة المرور القديمة",
+      "new_password":"كلمة المرور الجديدة",
+      "confirm_new_password":"تأكيد كلمة المرور الجديدة",
+      "save":"حفظ"
+    
+
 
 
     
