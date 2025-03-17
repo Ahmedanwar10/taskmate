@@ -11,11 +11,11 @@ class LoginRepoImpl implements LoginRepo {
 
   @override
   Future<Either<Failure, UserModel>> login({ // ✅ غيرت `User` إلى `UserModel`
-    required String email,
+    required String username ,
     required String password,
   }) async {
     try {
-      var response = await loginService.login(email: email, password: password);
+      var response = await loginService.login(email: username , password: password);
       
       if (response == null) {
         return Left(ServerFailure("خطأ غير متوقع، لم يتم استلام رد من السيرفر"));

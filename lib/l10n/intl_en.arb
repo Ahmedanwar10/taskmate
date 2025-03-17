@@ -54,7 +54,16 @@
   "old_password":"Old Password",
   "new_password":"New Password",
   "confirm_new_password":"Confirm New Password",
-  "save":"Save"
+  "save":"Save",
+  "password_changed_successfully":"Password changed successfully",
+  "password_changed_success_title":"Successful Operation",
+  "password_changed":"Password changed",
+  "password_changed_success":"Password changed successfully",
+  "name":"Name",
+  "username_required":"username_required",
+  "username_too_short":"username_too_short",
+  "enter_your_username":"enter_your_username",
+  "user_name":"User Name"
   
 
 

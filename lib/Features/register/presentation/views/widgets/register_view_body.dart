@@ -22,6 +22,8 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
   late TextEditingController emailController;
   late TextEditingController passwordController;
   late TextEditingController confirmPasswordController;
+  final TextEditingController usernameController = TextEditingController();
+
   GlobalKey<FormState> formKey = GlobalKey();
   bool isLoading = false;
 
@@ -77,6 +79,16 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
     return null;
   }
 
+  String? validateUsername(String? value) {
+    if (value == null || value.trim().isEmpty) {
+      return S.of(context).username_required; // رسالة خطأ عند تركه فارغًا
+    }
+    if (value.length < 3) {
+      return S.of(context).username_too_short; // يجب أن يكون الاسم أطول
+    }
+    return null;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -96,8 +108,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                     buttonColor: ColorManager.primary,
                     dialogType: DialogType.success,
                     onOkPressed: () {
-                      GoRouter.of(context)
-                          .go('/login'); 
+                      GoRouter.of(context).go('/login');
                     },
                   );
                 } else if (state is RegisterFailure) {
@@ -128,14 +139,16 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                         ),
                         SizedBox(
                             height: MediaQuery.of(context).size.height * 0.1),
-                        Text(S.of(context).email,
+                        Text(S.of(context).user_name,
                             style: AppStyles.styleSomarSansBold12(context)),
-                        const SizedBox(height: 9),
                         CustomTextFormField(
-                          hint: S.of(context).enter_your_email,
-                          controller: emailController,
-                          keyboardType: TextInputType.emailAddress,
-                          validator: validateEmail,
+                          hint: S
+                              .of(context)
+                              .enter_your_username, // تغيير التسمية
+                          controller: usernameController,
+                          keyboardType: TextInputType.text,
+                          validator:
+                              validateUsername, // التحقق من الاسم بدلاً من البريد
                         ),
                         const SizedBox(height: 18),
                         Text(S.of(context).password,
@@ -174,7 +187,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                                 setState(() => isLoading = true);
                                 await BlocProvider.of<RegisterCubit>(context)
                                     .registerUser(
-                                  username: emailController.text,
+                                  username: usernameController.text,
                                   password: passwordController.text,
                                 );
                               }
@@ -184,7 +197,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                         const SizedBox(height: 16),
                         GestureDetector(
                           onTap: () {
-                             GoRouter.of(context).go('/login');
+                            GoRouter.of(context).go('/login');
                           },
                           child: Center(
                             child: RichText(

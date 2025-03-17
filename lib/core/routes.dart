@@ -7,6 +7,7 @@ import 'package:taskmate_app/Features/notification/views/notification_view.dart'
 import 'package:taskmate_app/Features/profile_options/change_password/presentation/views/ch_pass_views.dart';
 import 'package:taskmate_app/Features/profile_options/profile/views/profile_view.dart';
 import 'package:taskmate_app/Features/profile_options/settings/views/setting_view.dart';
+import 'package:taskmate_app/Features/profile_options/update_profile/presentation/views/updata_profile.dart';
 import 'package:taskmate_app/Features/register/presentation/views/register_view.dart';
 import 'package:taskmate_app/Features/splash/splash_view.dart';
 
@@ -25,6 +26,7 @@ class AppRoutes {
   static const String notificationRoute = "/notification";
   static const String bottomNavBarRoute = '/bottomNavBar';
   static const String changePasswordRoute = '/changePassword';
+  static const String updateProfileRoute = '/updateProfile';
 
   static final router = GoRouter(
     routes: [
@@ -67,6 +69,10 @@ class AppRoutes {
        GoRoute(
         path: changePasswordRoute,
         builder: (context, state) => const ChangePasswordView(),
+      ),
+        GoRoute(
+        path: updateProfileRoute,
+        builder: (context, state) => const UpdataProfile(),
       ),
     ],
   );

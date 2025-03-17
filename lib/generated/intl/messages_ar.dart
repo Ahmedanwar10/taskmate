@@ -72,6 +72,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "enter_your_password": MessageLookupByLibrary.simpleMessage(
       "أدخل كلمة المرور",
     ),
+    "enter_your_username": MessageLookupByLibrary.simpleMessage(
+      "ادخل اسم المستخدم",
+    ),
     "forgot_password": MessageLookupByLibrary.simpleMessage(
       "هل نسيت كلمة المرور؟",
     ),
@@ -91,11 +94,24 @@ class MessageLookup extends MessageLookupByLibrary {
       "تم تسجيل الدخول بنجاح",
     ),
     "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+    "name": MessageLookupByLibrary.simpleMessage("الاسم"),
     "new_password": MessageLookupByLibrary.simpleMessage("كلمة المرور الجديدة"),
     "notification": MessageLookupByLibrary.simpleMessage("الإشعارات"),
     "office_projects": MessageLookupByLibrary.simpleMessage("مشاريع المكتب"),
     "old_password": MessageLookupByLibrary.simpleMessage("كلمة المرور القديمة"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+    "password_changed": MessageLookupByLibrary.simpleMessage(
+      "تم تغيير كلمة المرور",
+    ),
+    "password_changed_success": MessageLookupByLibrary.simpleMessage(
+      "تم تغيير كلمة المرور بنجاح",
+    ),
+    "password_changed_success_title": MessageLookupByLibrary.simpleMessage(
+      "عملية ناجحة",
+    ),
+    "password_changed_successfully": MessageLookupByLibrary.simpleMessage(
+      "تم تغيير كلمة المرور بنجاح",
+    ),
     "password_confirmation_required": MessageLookupByLibrary.simpleMessage(
       "تأكيد كلمة المرور مطلوب",
     ),
@@ -122,6 +138,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "title": MessageLookupByLibrary.simpleMessage("مدير المهام"),
     "update_profile": MessageLookupByLibrary.simpleMessage(
       "تحديث الملف الشخصي",
+    ),
+    "user_name": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
+    "username_required": MessageLookupByLibrary.simpleMessage(
+      "اسم المستخدم مطلوب",
+    ),
+    "username_too_short": MessageLookupByLibrary.simpleMessage(
+      "اسم المستخدم قصير جدا",
     ),
     "view_task": MessageLookupByLibrary.simpleMessage("عرض المهمة"),
     "welcome": MessageLookupByLibrary.simpleMessage("مرحبًا بك في TaskMate"),

@@ -509,6 +509,86 @@ class S {
   String get save {
     return Intl.message('Save', name: 'save', desc: '', args: []);
   }
+
+  /// `Password changed successfully`
+  String get password_changed_successfully {
+    return Intl.message(
+      'Password changed successfully',
+      name: 'password_changed_successfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Successful Operation`
+  String get password_changed_success_title {
+    return Intl.message(
+      'Successful Operation',
+      name: 'password_changed_success_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password changed`
+  String get password_changed {
+    return Intl.message(
+      'Password changed',
+      name: 'password_changed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password changed successfully`
+  String get password_changed_success {
+    return Intl.message(
+      'Password changed successfully',
+      name: 'password_changed_success',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get name {
+    return Intl.message('Name', name: 'name', desc: '', args: []);
+  }
+
+  /// `username_required`
+  String get username_required {
+    return Intl.message(
+      'username_required',
+      name: 'username_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `username_too_short`
+  String get username_too_short {
+    return Intl.message(
+      'username_too_short',
+      name: 'username_too_short',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `enter_your_username`
+  String get enter_your_username {
+    return Intl.message(
+      'enter_your_username',
+      name: 'enter_your_username',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `User Name`
+  String get user_name {
+    return Intl.message('User Name', name: 'user_name', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

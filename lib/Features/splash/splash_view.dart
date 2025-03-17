@@ -1,15 +1,47 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:taskmate_app/core/app_style.dart';
+import 'package:hive/hive.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:taskmate_app/Features/login/data/model/user_model/user.dart';
 import 'package:taskmate_app/core/common/widgets/custtom_button.dart';
 import 'package:taskmate_app/core/constants/assets.dart';
 import 'package:taskmate_app/core/constants/color_manager.dart';
-import 'package:taskmate_app/core/constants/values.dart';
 import 'package:taskmate_app/core/resources/font_manager.dart';
-import 'package:taskmate_app/generated/l10n.dart'; // استيراد ملف الترجمة
+import 'package:taskmate_app/generated/l10n.dart';
+import 'package:taskmate_app/Features/login/data/model/user_model/user_model.dart';
 
-class SplashView extends StatelessWidget {
+class SplashView extends StatefulWidget {
   const SplashView({super.key});
+
+  @override
+  _SplashViewState createState() => _SplashViewState();
+}
+
+class _SplashViewState extends State<SplashView> {
+  @override
+  void initState() {
+    super.initState();
+    _checkLoginStatus();
+  }
+
+  Future<void> _checkLoginStatus() async {
+    await Future.delayed(Duration(seconds: 2)); // تأخير بسيط لمحاكاة التحميل
+
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    String? token = prefs.getString("auth_token");
+
+    if (token != null) {
+      var box = Hive.box<UserData>('userBox');
+      UserData? user = box.get("user");
+
+      if (user != null) {
+        GoRouter.of(context).go('/home'); // تحويل المستخدم إلى الصفحة الرئيسية
+        return;
+      }
+    }
+
+    GoRouter.of(context).go('/login'); // تحويل المستخدم إلى تسجيل الدخول
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,9 +63,9 @@ class SplashView extends StatelessWidget {
               Image.asset(Assets.imagesGroup270),
               const SizedBox(height: 60),
               Text(
-                S.of(context).task_management, // استبدال النصوص بالترجمة
+                S.of(context).task_management,
                 style: const TextStyle(
-                  fontSize: AppSize.s20,
+                  fontSize: 20,
                   fontWeight: FontWeightManager.regular,
                 ),
               ),
@@ -51,8 +83,7 @@ class SplashView extends StatelessWidget {
                     GoRouter.of(context).go('/register');
                   },
                   text: S.of(context).lets_start,
-                  textStyle: AppStyles.styleSomarSansBold16(context)
-                      .copyWith(color: Colors.white), // استخدام الترجمة
+                  textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
                 ),
               ),
             ],

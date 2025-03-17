@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:taskmate_app/Features/profile_options/profile/views/widgets/avatar_profile.dart';
+import 'package:taskmate_app/Features/profile_options/update_profile/presentation/views/widgets/avatar_profile.dart';
 import 'package:taskmate_app/core/constants/assets.dart';
 
 class HeaderHome extends StatelessWidget {
@@ -13,7 +13,6 @@ class HeaderHome extends StatelessWidget {
       children: [
        
         const ProfileAvatar(
-          imagePath: Assets.imagesIMG20240225174536993,
         // onTap: () => GoRouter.of(context).go('/profile'),
         ),
         const SizedBox(width: 13),

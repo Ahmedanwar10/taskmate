@@ -1,7 +1,8 @@
 import 'package:hive/hive.dart';
 import 'package:taskmate_app/Features/login/data/model/user_model/user.dart';
 
-    part 'user_model_h.g.dart';
+part 'user_model_h.g.dart'; // تأكد من وجود هذا السطر!
+
 @HiveType(typeId: 0) // تعيين ID لهذا الموديل في Hive
 class UserModel extends HiveObject {
   @HiveField(0)
@@ -14,7 +15,7 @@ class UserModel extends HiveObject {
   bool? status;
 
   @HiveField(3)
-  User? user; // يجب أيضًا أن يكون `User` مسجلًا في Hive
+  UserData? user;
 
   UserModel({this.accessToken, this.refreshToken, this.status, this.user});
 
@@ -24,7 +25,7 @@ class UserModel extends HiveObject {
         status: json['status'] as bool?,
         user: json['user'] == null
             ? null
-            : User.fromJson(json['user'] as Map<String, dynamic>),
+            : UserData.fromJson(json['user'] as Map<String, dynamic>),
       );
 
   Map<String, dynamic> toJson() => {

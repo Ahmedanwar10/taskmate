@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'dart:convert';
 import 'package:taskmate_app/core/common/widgets/diowrapper.dart';
 
 class LoginService {

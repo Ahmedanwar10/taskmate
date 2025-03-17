@@ -16,7 +16,7 @@ final class LoginFailure extends LoginState {
 final class LoginSuccess extends LoginState {
   final String accessToken;
   final String refreshToken;
-  final User user;
+  final UserModel user;
 
   LoginSuccess({
     required this.accessToken,

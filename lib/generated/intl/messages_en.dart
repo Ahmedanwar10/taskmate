@@ -70,6 +70,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "enter_your_password": MessageLookupByLibrary.simpleMessage(
       "Enter your password",
     ),
+    "enter_your_username": MessageLookupByLibrary.simpleMessage(
+      "enter_your_username",
+    ),
     "forgot_password": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
     "grocery_shopping_app_design": MessageLookupByLibrary.simpleMessage(
       "Grocery Shopping App Design",
@@ -87,11 +90,24 @@ class MessageLookup extends MessageLookupByLibrary {
       "Login successfully",
     ),
     "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+    "name": MessageLookupByLibrary.simpleMessage("Name"),
     "new_password": MessageLookupByLibrary.simpleMessage("New Password"),
     "notification": MessageLookupByLibrary.simpleMessage("Notification"),
     "office_projects": MessageLookupByLibrary.simpleMessage("Office Projects"),
     "old_password": MessageLookupByLibrary.simpleMessage("Old Password"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
+    "password_changed": MessageLookupByLibrary.simpleMessage(
+      "Password changed",
+    ),
+    "password_changed_success": MessageLookupByLibrary.simpleMessage(
+      "Password changed successfully",
+    ),
+    "password_changed_success_title": MessageLookupByLibrary.simpleMessage(
+      "Successful Operation",
+    ),
+    "password_changed_successfully": MessageLookupByLibrary.simpleMessage(
+      "Password changed successfully",
+    ),
     "password_confirmation_required": MessageLookupByLibrary.simpleMessage(
       "Password confirmation is required",
     ),
@@ -117,6 +133,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "theme": MessageLookupByLibrary.simpleMessage("Theme"),
     "title": MessageLookupByLibrary.simpleMessage("Task Manager"),
     "update_profile": MessageLookupByLibrary.simpleMessage("Update Profile"),
+    "user_name": MessageLookupByLibrary.simpleMessage("User Name"),
+    "username_required": MessageLookupByLibrary.simpleMessage(
+      "username_required",
+    ),
+    "username_too_short": MessageLookupByLibrary.simpleMessage(
+      "username_too_short",
+    ),
     "view_task": MessageLookupByLibrary.simpleMessage("View Task"),
     "welcome": MessageLookupByLibrary.simpleMessage("Welcome to TaskMate"),
     "welcome_to_task_mate": MessageLookupByLibrary.simpleMessage(

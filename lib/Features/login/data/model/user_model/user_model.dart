@@ -4,7 +4,7 @@ class UserModel {
   String? accessToken;
   String? refreshToken;
   bool? status;
-  User? user;
+  UserData? user;
 
   UserModel({this.accessToken, this.refreshToken, this.status, this.user});
 
@@ -14,7 +14,7 @@ class UserModel {
         status: json['status'] as bool?,
         user: json['user'] == null
             ? null
-            : User.fromJson(json['user'] as Map<String, dynamic>),
+            : UserData.fromJson(json['user'] as Map<String, dynamic>),
       );
 
   Map<String, dynamic> toJson() => {

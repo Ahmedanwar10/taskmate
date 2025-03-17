@@ -55,7 +55,16 @@
       "old_password":"كلمة المرور القديمة",
       "new_password":"كلمة المرور الجديدة",
       "confirm_new_password":"تأكيد كلمة المرور الجديدة",
-      "save":"حفظ"
+      "save":"حفظ",
+      "password_changed_successfully":"تم تغيير كلمة المرور بنجاح",
+      "password_changed_success_title":"عملية ناجحة",
+      "password_changed":"تم تغيير كلمة المرور",
+      "password_changed_success":"تم تغيير كلمة المرور بنجاح",
+      "name":"الاسم",
+      "username_required":"اسم المستخدم مطلوب",
+      "username_too_short":"اسم المستخدم قصير جدا",
+      "enter_your_username":"ادخل اسم المستخدم",
+      "user_name":"اسم المستخدم"
     
 
 

@@ -4,7 +4,7 @@ import 'package:taskmate_app/core/failure/failure.dart';
 
 abstract class LoginRepo {
   Future<Either<Failure, UserModel>> login({ // ✅ تعديل نوع الإرجاع
-    required String email,
+    required String username ,
     required String password,
   });
 }

@@ -3,7 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:taskmate_app/Features/login/data/model/user_model/user.dart';
 import 'package:taskmate_app/Features/login/data/model/user_model_hive/user_model_h.dart';
+import 'package:taskmate_app/core/common/widgets/diowrapper.dart';
 import 'package:taskmate_app/core/constants/constant.dart';
 import 'package:taskmate_app/core/language/language_cubit_cubit.dart';
 import 'package:taskmate_app/core/routes.dart';
@@ -11,22 +14,29 @@ import 'package:taskmate_app/core/theme/theme_cubit.dart';
 import 'package:taskmate_app/generated/l10n.dart';
 
 void main() async {
- WidgetsFlutterBinding.ensureInitialized(); // تأكد من تهيئة Flutter
+ WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
+  Hive.registerAdapter(UserModelAdapter());
+  Hive.registerAdapter(UserDataAdapter());
 
-  if (!Hive.isAdapterRegistered(UserModelAdapter().typeId)) {
-    Hive.registerAdapter(UserModelAdapter()); // ✅ تسجيل الـ Adapter إذا لم يكن مسجلًا
-  }
+if (!Hive.isBoxOpen('userBox')) {
+  await Hive.openBox<UserData>('userBox');
+} else {
+  print("⚠️ Hive Box 'userBox' is already open!");
+}
 
-  // ✅ فتح الصندوق فقط إذا لم يكن مفتوحًا
-  if (!Hive.isBoxOpen('userBox')) {
-    await Hive.openBox<UserModel>('userBox');
-  }
 
   if (!Hive.isBoxOpen(kThemeBox)) {
-    await Hive.openBox<int>(kThemeBox); // فتح صندوق الثيم فقط عند الحاجة
-  } // فتح صندوق الثيم
+    await Hive.openBox<int>(kThemeBox);
+  } 
+  
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  String? token = prefs.getString("auth_token");
 
+  if (token != null) {
+    DioWrapper().setToken(token);
+    print("🔄 Loaded Token: $token");
+  }
   runApp(
     MultiBlocProvider(
       providers: [
@@ -45,7 +55,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<LanguageCubitCubit, LanguageCubitState>(
       builder: (context, langState) {
-        String languageCode = "ar"; // اللغة الافتراضية
+        String languageCode = "ar"; 
         if (langState is LanguageChange) {
           languageCode = langState.selectedLanguage;
         }

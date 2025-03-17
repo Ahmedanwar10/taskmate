@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,7 +9,6 @@ import 'package:taskmate_app/core/common/function/show_awesome_dialoge.dart';
 import 'package:taskmate_app/core/common/widgets/custtom_button.dart';
 import 'package:taskmate_app/core/common/widgets/text_form.dart';
 import 'package:taskmate_app/core/constants/color_manager.dart';
-import 'package:taskmate_app/core/routes.dart';
 import 'package:taskmate_app/generated/l10n.dart';
 
 class LoginViewBody extends StatefulWidget {
@@ -25,6 +22,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final GlobalKey<FormState> formKey = GlobalKey();
+  final TextEditingController usernameController = TextEditingController();
 
   @override
   void dispose() {
@@ -38,7 +36,8 @@ class _LoginViewBodyState extends State<LoginViewBody> {
     if (value == null || value.trim().isEmpty) {
       return S.of(context).email_required; // رسالة خطأ عند تركه فارغًا
     }
-    final emailRegex = RegExp(r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$");
+    final emailRegex =
+        RegExp(r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$");
     if (!emailRegex.hasMatch(value.trim())) {
       return S.of(context).invalid_email; // رسالة خطأ عند الصيغة غير الصحيحة
     }
@@ -52,7 +51,18 @@ class _LoginViewBodyState extends State<LoginViewBody> {
     }
     return null;
   }
- bool isLoading = false;
+
+  String? validateUsername(String? value) {
+    if (value == null || value.trim().isEmpty) {
+      return S.of(context).username_required; // رسالة خطأ عند تركه فارغًا
+    }
+    if (value.length < 3) {
+      return S.of(context).username_too_short; // يجب أن يكون الاسم أطول
+    }
+    return null;
+  }
+
+  bool isLoading = false;
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<LoginCubit, LoginState>(
@@ -61,29 +71,27 @@ class _LoginViewBodyState extends State<LoginViewBody> {
           setState(() => isLoading = false);
           showAwesomeDialouge(
             context,
-                    message: state.errorMessage,
-                    buttonColor: Colors.red,
-            );
+            message: state.errorMessage,
+            buttonColor: Colors.red,
+          );
         }
         if (state is LoginSuccess) {
-           
-                  showAwesomeDialouge(
-                    context,
-                    message: S.of(context).login_successfully,
-                    title: S.of(context).login_success_title,
-                    buttonColor: ColorManager.primary,
-                    dialogType: DialogType.success,
-                    onOkPressed: () {
-                      GoRouter.of(context)
-                          .go('/home'); // ✅ الانتقال يتم بعد الضغط على OK
-                    },
-                  );        }else if (state is LoginLoading) {
+          showAwesomeDialouge(
+            context,
+            message: S.of(context).login_successfully,
+            title: S.of(context).login_success_title,
+            buttonColor: ColorManager.primary,
+            dialogType: DialogType.success,
+            onOkPressed: () {
+              GoRouter.of(context)
+                  .go('/home'); // ✅ الانتقال يتم بعد الضغط على OK
+            },
+          );
+        } else if (state is LoginLoading) {
           setState(() => isLoading = true);
-          
-          }
+        }
       },
       builder: (context, state) {
-
         return ModalProgressHUD(
           inAsyncCall: isLoading,
           progressIndicator: CircularProgressIndicator(
@@ -106,13 +114,14 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                     const SizedBox(height: 20),
 
                     /// 📌 إدخال البريد الإلكتروني مع التحقق
-                    Text(S.of(context).email,
+                    Text(S.of(context).user_name,
                         style: AppStyles.styleSomarSansBold12(context)),
                     CustomTextFormField(
-                      hint: S.of(context).enter_your_email,
-                      controller: emailController,
-                      keyboardType: TextInputType.emailAddress,
-                      validator: validateEmail, // ✅ التحقق من البريد الإلكتروني
+                      hint: S.of(context).enter_your_username, // تغيير التسمية
+                      controller: usernameController,
+                      keyboardType: TextInputType.text,
+                      validator:
+                          validateUsername, // التحقق من الاسم بدلاً من البريد
                     ),
                     const SizedBox(height: 18),
 
@@ -139,7 +148,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                       onPressed: () {
                         if (formKey.currentState!.validate()) {
                           context.read<LoginCubit>().login(
-                                email: emailController.text.trim(),
+                                username  : usernameController.text.trim(),
                                 password: passwordController.text.trim(),
                               );
                         }
