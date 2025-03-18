@@ -72,8 +72,6 @@ class ProfileViewBody extends StatelessWidget {
             icon: Icons.logout,
             title: S.of(context).logout,
             onTap: () {
-              context.read<LoginCubit>().logout();
-
               _showLogoutConfirmationDialog(context);
               context.read<LoginCubit>().logout();
             },

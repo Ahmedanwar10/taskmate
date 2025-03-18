@@ -6,6 +6,9 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:taskmate_app/Features/login/data/model/user_model/user.dart';
 import 'package:taskmate_app/Features/login/data/model/user_model_hive/user_model_h.dart';
+import 'package:taskmate_app/Features/login/data/repo/login_repo_impl.dart';
+import 'package:taskmate_app/Features/login/data/service/login_repo_service.dart';
+import 'package:taskmate_app/Features/login/presentation/managers/login_cubit.dart';
 import 'package:taskmate_app/core/common/widgets/diowrapper.dart';
 import 'package:taskmate_app/core/constants/constant.dart';
 import 'package:taskmate_app/core/language/language_cubit_cubit.dart';
@@ -40,6 +43,13 @@ if (!Hive.isBoxOpen('userBox')) {
   runApp(
     MultiBlocProvider(
       providers: [
+         BlocProvider<LoginCubit>(
+          create: (context) => LoginCubit(
+             LoginRepoImpl(
+            loginService: LoginService(DioWrapper()), // ✅ استخدام DioWrapper
+          ),
+          ),
+        ),
         BlocProvider(create: (context) => LanguageCubitCubit()),
         BlocProvider(create: (context) => ThemeCubit()),
       ],

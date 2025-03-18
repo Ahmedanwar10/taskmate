@@ -17,10 +17,13 @@ final class LoginSuccess extends LoginState {
   final String accessToken;
   final String refreshToken;
   final UserModel user;
+  final String username; // ✅ إضافة اسم المستخدم
 
   LoginSuccess({
     required this.accessToken,
     required this.refreshToken,
     required this.user,
+    required this.username,
+
   });
 }

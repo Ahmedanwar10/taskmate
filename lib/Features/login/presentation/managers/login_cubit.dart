@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:bloc/bloc.dart';
 import 'package:hive/hive.dart';
 import 'package:meta/meta.dart';
@@ -53,6 +55,8 @@ box.put("user", loginData.user!);
             accessToken: loginData.accessToken!,
             refreshToken: loginData.refreshToken!,
             user: loginData,
+            username: username, // ✅ تمرير اسم المستخدم
+
           ));
         } else {
           emit(LoginFailure(errorMessage: ServerFailure(S.current.data_not_valid).errorMessage));
@@ -91,13 +95,14 @@ UserData? user = box.get("user");
 
 
       if (user != null) {
-        emit(LoginSuccess(
-          accessToken: token,
-          refreshToken: prefs.getString("refresh_token") ?? "",
-          user: user as UserModel,
-        ));
-        return;
-      }
+  emit(LoginSuccess(
+    accessToken: token,
+    refreshToken: prefs.getString("refresh_token") ?? "",
+    user: UserModel.fromJson(user.toJson()), // ✅ إزالة التحويل الخاطئ
+username: user.username ?? "Guest",  // ✅ تعيين قيمة افتراضية
+  ));
+}
+
     }
 
     emit(LoginInitial());

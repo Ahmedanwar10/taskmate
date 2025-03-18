@@ -5,22 +5,14 @@ import 'package:taskmate_app/Features/login/data/service/login_repo_service.dart
 import 'package:taskmate_app/Features/login/presentation/managers/login_cubit.dart';
 import 'package:taskmate_app/Features/login/presentation/views/widgets/login_view_body.dart';
 import 'package:taskmate_app/core/common/widgets/diowrapper.dart';
-import 'package:taskmate_app/core/constants/assets.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: BlocProvider(
-        create: (context) => LoginCubit(
-          LoginRepoImpl(
-            loginService: LoginService(DioWrapper()), // ✅ استخدام DioWrapper
-          ),
-        ),
-        child: const LoginViewBody(),
-      ),
+    return const Scaffold(
+      body:  LoginViewBody(),
     );
   }
 }
