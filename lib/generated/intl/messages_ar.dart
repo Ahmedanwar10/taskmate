@@ -148,6 +148,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "view_task": MessageLookupByLibrary.simpleMessage("عرض المهمة"),
     "welcome": MessageLookupByLibrary.simpleMessage("مرحبًا بك في TaskMate"),
+    "welcome_to_taskMate": MessageLookupByLibrary.simpleMessage(
+      "مرحبا في مهماتي",
+    ),
     "welcome_to_task_mate": MessageLookupByLibrary.simpleMessage(
       "مرحبا بكم في مهماتي",
     ),

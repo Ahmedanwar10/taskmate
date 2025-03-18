@@ -589,6 +589,16 @@ class S {
   String get user_name {
     return Intl.message('User Name', name: 'user_name', desc: '', args: []);
   }
+
+  /// `Welcome TaskMate`
+  String get welcome_to_taskMate {
+    return Intl.message(
+      'Welcome TaskMate',
+      name: 'welcome_to_taskMate',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:taskmate_app/Features/profile_options/update_profile/presentation/views/widgets/avatar_profile.dart';
 import 'package:taskmate_app/Features/login/presentation/managers/login_cubit.dart';
+import 'package:taskmate_app/generated/l10n.dart';
 
 class HeaderHome extends StatelessWidget {
   const HeaderHome({super.key});
@@ -25,7 +26,7 @@ class HeaderHome extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            const Text('Welcome to TaskMate'),
+             Text(S.of(context).welcome_to_taskMate),
             const SizedBox(height: 4.5),
             Text(username.isNotEmpty ? username : 'Guest', // عرض الاسم أو "Guest" في حال عدم تسجيل الدخول
                 style: const TextStyle(fontWeight: FontWeight.bold)),

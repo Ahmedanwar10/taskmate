@@ -63,7 +63,8 @@
   "username_required":"username_required",
   "username_too_short":"username_too_short",
   "enter_your_username":"enter_your_username",
-  "user_name":"User Name"
+  "user_name":"User Name",
+  "welcome_to_taskMate":"Welcome TaskMate"
   
 
 
