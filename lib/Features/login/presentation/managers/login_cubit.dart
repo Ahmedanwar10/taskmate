@@ -37,26 +37,24 @@ class LoginCubit extends Cubit<LoginState> {
             loginData.refreshToken != null &&
             loginData.user != null) {
 
-          // ✅ حفظ التوكن في SharedPreferences
+          // ✅ Save tokens in SharedPreferences
           SharedPreferences prefs = await SharedPreferences.getInstance();
           await prefs.setString("auth_token", loginData.accessToken!);
           await prefs.setString("refresh_token", loginData.refreshToken!);
+          await prefs.setString("username", username); // ✅ Save username
 
-          // ✅ حفظ بيانات المستخدم في Hive
+          // ✅ Save user data in Hive
           var box = Hive.isBoxOpen('userBox') ? Hive.box<UserData>('userBox') : await Hive.openBox<UserData>('userBox');
-box.put("user", loginData.user!);
+          box.put("user", loginData.user!);
 
-
-
-          // ✅ تحديث التوكن في DioWrapper
+          // ✅ Update token in DioWrapper
           DioWrapper().setToken(loginData.accessToken!);
 
           emit(LoginSuccess(
             accessToken: loginData.accessToken!,
             refreshToken: loginData.refreshToken!,
-            user: loginData,
-            username: username, // ✅ تمرير اسم المستخدم
-
+            user: loginData.user!,  // ✅ Fix type issue
+            username: username,
           ));
         } else {
           emit(LoginFailure(errorMessage: ServerFailure(S.current.data_not_valid).errorMessage));
@@ -66,20 +64,20 @@ box.put("user", loginData.user!);
   }
 
   Future<void> logout() async {
-    // ❌ إزالة التوكن من DioWrapper
+    // ❌ Clear token from DioWrapper
     DioWrapper().clearToken();
 
-    // ❌ حذف التوكن من SharedPreferences
+    // ❌ Remove tokens from SharedPreferences
     SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.remove("auth_token");
     await prefs.remove("refresh_token");
+    await prefs.remove("username"); // ✅ Remove stored username
 
-    // ❌ حذف بيانات المستخدم من التخزين المحلي (Hive)
+    // ❌ Clear user data from Hive
     if (Hive.isBoxOpen('userBox')) {
-  var box = Hive.box<UserData>('userBox');
-  await box.clear();
-}
-
+      var box = Hive.box<UserData>('userBox');
+      await box.clear();
+    }
 
     emit(LoginInitial());
   }
@@ -90,19 +88,19 @@ box.put("user", loginData.user!);
 
     if (token != null) {
       DioWrapper().setToken(token);
-     var box = Hive.isBoxOpen('userBox') ? Hive.box<UserData>('userBox') : await Hive.openBox<UserData>('userBox');
-UserData? user = box.get("user");
-
+      var box = Hive.isBoxOpen('userBox') ? Hive.box<UserData>('userBox') : await Hive.openBox<UserData>('userBox');
+      UserData? user = box.get("user");
 
       if (user != null) {
-  emit(LoginSuccess(
-    accessToken: token,
-    refreshToken: prefs.getString("refresh_token") ?? "",
-    user: UserModel.fromJson(user.toJson()), // ✅ إزالة التحويل الخاطئ
-username: user.username ?? "Guest",  // ✅ تعيين قيمة افتراضية
-  ));
-}
-
+        String? savedUsername = prefs.getString("username"); // ✅ Retrieve username
+        emit(LoginSuccess(
+          accessToken: token,
+          refreshToken: prefs.getString("refresh_token") ?? "",
+          user: user,
+          username: savedUsername ?? user.username ?? "Guest",
+        ));
+        return;
+      }
     }
 
     emit(LoginInitial());

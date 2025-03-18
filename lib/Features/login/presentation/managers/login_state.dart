@@ -16,7 +16,7 @@ final class LoginFailure extends LoginState {
 final class LoginSuccess extends LoginState {
   final String accessToken;
   final String refreshToken;
-  final UserModel user;
+  final UserData user;
   final String username; // ✅ إضافة اسم المستخدم
 
   LoginSuccess({
