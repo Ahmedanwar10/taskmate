@@ -2,7 +2,7 @@ import 'package:hive/hive.dart';
 
 part 'user.g.dart'; // تأكد من وجود هذا السطر!
 
-@HiveType(typeId: 1) // تحديد typeId مختلف عن UserModel
+@HiveType(typeId: 33) // تحديد typeId مختلف عن UserModel
 class UserData extends HiveObject {
   @HiveField(0)
   int? id;

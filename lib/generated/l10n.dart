@@ -599,6 +599,41 @@ class S {
       args: [],
     );
   }
+
+  /// `Please enter valid username`
+  String get please_enter_valid_username {
+    return Intl.message(
+      'Please enter valid username',
+      name: 'please_enter_valid_username',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile updated successfully`
+  String get profile_updated_successfully {
+    return Intl.message(
+      'Profile updated successfully',
+      name: 'profile_updated_successfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Success`
+  String get success {
+    return Intl.message('Success', name: 'success', desc: '', args: []);
+  }
+
+  /// `Error`
+  String get error {
+    return Intl.message('Error', name: 'error', desc: '', args: []);
+  }
+
+  /// `Loading`
+  String get loading {
+    return Intl.message('Loading', name: 'loading', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

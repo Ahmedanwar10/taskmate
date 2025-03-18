@@ -17,28 +17,42 @@ import 'package:taskmate_app/core/theme/theme_cubit.dart';
 import 'package:taskmate_app/generated/l10n.dart';
 
 void main() async {
- WidgetsFlutterBinding.ensureInitialized();
-  await Hive.initFlutter();
-  Hive.registerAdapter(UserModelAdapter());
-  Hive.registerAdapter(UserDataAdapter());
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter(); // تأكد من تهيئة Hive قبل الاستخدام
 
-if (!Hive.isBoxOpen('userBox')) {
-  await Hive.openBox<UserData>('userBox');
-} else {
-  print("⚠️ Hive Box 'userBox' is already open!");
-}
+  if (!Hive.isAdapterRegistered(0)) {
+    Hive.registerAdapter(UserModelAdapter());
+  }
 
+  if (!Hive.isAdapterRegistered(33)) {
+    Hive.registerAdapter(UserDataAdapter());
+  }
+
+  if (!Hive.isBoxOpen('userBox')) {
+    await Hive.openBox<UserData>('userBox');
+  }
+
+  if (!Hive.isBoxOpen('tokenBox')) {
+    await Hive.openBox<String>('tokenBox');
+  }
 
   if (!Hive.isBoxOpen(kThemeBox)) {
     await Hive.openBox<int>(kThemeBox);
-  } 
-  
+  }
+
+  // 🔥 تحميل التوكن من SharedPreferences
   SharedPreferences prefs = await SharedPreferences.getInstance();
   String? token = prefs.getString("auth_token");
+  String? refresh = prefs.getString("access_token");
 
   if (token != null) {
     DioWrapper().setToken(token);
     print("🔄 Loaded Token: $token");
+  }
+
+  if (refresh != null) {
+    DioWrapper().handleTokenRefresh();
+    print("🔄 Loaded Refresh Token: $refresh");
   }
   runApp(
     MultiBlocProvider(

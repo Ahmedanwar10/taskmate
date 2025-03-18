@@ -75,6 +75,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "enter_your_username": MessageLookupByLibrary.simpleMessage(
       "ادخل اسم المستخدم",
     ),
+    "error": MessageLookupByLibrary.simpleMessage("خطاء"),
     "forgot_password": MessageLookupByLibrary.simpleMessage(
       "هل نسيت كلمة المرور؟",
     ),
@@ -88,6 +89,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "language": MessageLookupByLibrary.simpleMessage("اللغة"),
     "lets_start": MessageLookupByLibrary.simpleMessage("لنبدأ"),
     "light": MessageLookupByLibrary.simpleMessage("الفاتحة"),
+    "loading": MessageLookupByLibrary.simpleMessage("تحميل"),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "login_success_title": MessageLookupByLibrary.simpleMessage("عملية ناجحة"),
     "login_successfully": MessageLookupByLibrary.simpleMessage(
@@ -121,6 +123,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "password_required": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور مطلوبة",
     ),
+    "please_enter_valid_username": MessageLookupByLibrary.simpleMessage(
+      "يرجى ادخال اسم مستخدم صحيح",
+    ),
+    "profile_updated_successfully": MessageLookupByLibrary.simpleMessage(
+      "تم تحديث الملف الشخصي بنجاح",
+    ),
     "register": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "register_success_title": MessageLookupByLibrary.simpleMessage(
       "عملية ناجحة",
@@ -130,6 +138,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "save": MessageLookupByLibrary.simpleMessage("حفظ"),
     "settings": MessageLookupByLibrary.simpleMessage("الإعدادات"),
+    "success": MessageLookupByLibrary.simpleMessage("نجاح"),
     "task_management": MessageLookupByLibrary.simpleMessage(
       "إدارة المهام وقائمة المهام",
     ),

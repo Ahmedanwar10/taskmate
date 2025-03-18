@@ -65,8 +65,12 @@
       "username_too_short":"اسم المستخدم قصير جدا",
       "enter_your_username":"ادخل اسم المستخدم",
       "user_name":"اسم المستخدم",
-      "welcome_to_taskMate":"مرحبا في مهماتي"
-    
+      "welcome_to_taskMate":"مرحبا في مهماتي",
+      "please_enter_valid_username":"يرجى ادخال اسم مستخدم صحيح",
+      "profile_updated_successfully":"تم تحديث الملف الشخصي بنجاح",
+       "success":"نجاح",
+       "error":"خطاء",
+    "loading":"تحميل"
 
 
 

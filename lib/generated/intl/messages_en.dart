@@ -73,6 +73,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "enter_your_username": MessageLookupByLibrary.simpleMessage(
       "enter_your_username",
     ),
+    "error": MessageLookupByLibrary.simpleMessage("Error"),
     "forgot_password": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
     "grocery_shopping_app_design": MessageLookupByLibrary.simpleMessage(
       "Grocery Shopping App Design",
@@ -82,6 +83,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "language": MessageLookupByLibrary.simpleMessage("Language"),
     "lets_start": MessageLookupByLibrary.simpleMessage("Let’s Start"),
     "light": MessageLookupByLibrary.simpleMessage("Light"),
+    "loading": MessageLookupByLibrary.simpleMessage("Loading"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
     "login_success_title": MessageLookupByLibrary.simpleMessage(
       "Successful Operation",
@@ -117,6 +119,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "password_required": MessageLookupByLibrary.simpleMessage(
       "password_required",
     ),
+    "please_enter_valid_username": MessageLookupByLibrary.simpleMessage(
+      "Please enter valid username",
+    ),
+    "profile_updated_successfully": MessageLookupByLibrary.simpleMessage(
+      "Profile updated successfully",
+    ),
     "register": MessageLookupByLibrary.simpleMessage("Register"),
     "register_success_title": MessageLookupByLibrary.simpleMessage(
       "Successful Operation",
@@ -126,6 +134,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "save": MessageLookupByLibrary.simpleMessage("Save"),
     "settings": MessageLookupByLibrary.simpleMessage("Settings"),
+    "success": MessageLookupByLibrary.simpleMessage("Success"),
     "task_management": MessageLookupByLibrary.simpleMessage(
       "Task Management & To-Do List",
     ),

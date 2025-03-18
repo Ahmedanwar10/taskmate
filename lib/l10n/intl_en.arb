@@ -64,7 +64,12 @@
   "username_too_short":"username_too_short",
   "enter_your_username":"enter_your_username",
   "user_name":"User Name",
-  "welcome_to_taskMate":"Welcome TaskMate"
+  "welcome_to_taskMate":"Welcome TaskMate",
+  "please_enter_valid_username":"Please enter valid username",
+  "profile_updated_successfully":"Profile updated successfully",
+  "success":"Success",
+  "error":"Error",
+  "loading":"Loading"
   
 
 
