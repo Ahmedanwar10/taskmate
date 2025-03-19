@@ -57,11 +57,11 @@ void main() async {
   runApp(
     MultiBlocProvider(
       providers: [
-         BlocProvider<LoginCubit>(
+        BlocProvider<LoginCubit>(
           create: (context) => LoginCubit(
-             LoginRepoImpl(
-            loginService: LoginService(DioWrapper()), // ✅ استخدام DioWrapper
-          ),
+            LoginRepoImpl(
+              loginService: LoginService(DioWrapper()), // ✅ استخدام DioWrapper
+            ),
           ),
         ),
         BlocProvider(create: (context) => LanguageCubitCubit()),
@@ -79,7 +79,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<LanguageCubitCubit, LanguageCubitState>(
       builder: (context, langState) {
-        String languageCode = "ar"; 
+        String languageCode = "ar";
         if (langState is LanguageChange) {
           languageCode = langState.selectedLanguage;
         }

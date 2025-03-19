@@ -6,7 +6,8 @@ class LoginService {
 
   LoginService(DioWrapper dioWrapper); // Singleton
 
-  Future<Response?> login({required String email, required String password}) async {
+  Future<Response?> login(
+      {required String email, required String password}) async {
     Map<String, dynamic> body = {
       'username': email,
       'password': password,

@@ -24,6 +24,5 @@ final class LoginSuccess extends LoginState {
     required this.refreshToken,
     required this.user,
     required this.username,
-
   });
 }

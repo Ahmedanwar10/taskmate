@@ -15,8 +15,7 @@ class RegisterView extends StatelessWidget {
     return Scaffold(
       body: BlocProvider(
         create: (context) => RegisterCubit(
-          RegisterRepoImpl(registerService:RegisterService(DioWrapper()))
-        ),
+            RegisterRepoImpl(registerService: RegisterService(DioWrapper()))),
         child: const RegisterViewBody(),
       ),
     );

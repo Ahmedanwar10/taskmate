@@ -83,7 +83,10 @@ class _SplashViewState extends State<SplashView> {
                     GoRouter.of(context).go('/register');
                   },
                   text: S.of(context).lets_start,
-                  textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+                  textStyle: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
                 ),
               ),
             ],

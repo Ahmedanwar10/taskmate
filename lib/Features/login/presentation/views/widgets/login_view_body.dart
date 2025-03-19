@@ -148,7 +148,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                       onPressed: () {
                         if (formKey.currentState!.validate()) {
                           context.read<LoginCubit>().login(
-                                username  : usernameController.text.trim(),
+                                username: usernameController.text.trim(),
                                 password: passwordController.text.trim(),
                               );
                         }

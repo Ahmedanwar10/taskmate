@@ -68,11 +68,11 @@ class AppRoutes {
         path: settingsRoute,
         builder: (context, state) => const SettingView(),
       ),
-       GoRoute(
+      GoRoute(
         path: changePasswordRoute,
         builder: (context, state) => const ChangePasswordView(),
       ),
-        GoRoute(
+      GoRoute(
         path: updateProfileRoute,
         builder: (context, state) => const UpdataProfile(),
       ),

@@ -15,7 +15,8 @@ class ThemeSetting extends StatelessWidget {
         bool isDarkMode = false;
 
         if (state is ThemeChanged) {
-          isDarkMode = state.themeData.brightness == Brightness.dark; // ✅ تصحيح التحقق من الثيم
+          isDarkMode = state.themeData.brightness ==
+              Brightness.dark; // ✅ تصحيح التحقق من الثيم
         }
 
         return Column(
@@ -23,7 +24,8 @@ class ThemeSetting extends StatelessWidget {
             const SizedBox(height: 20),
             Container(
               width: double.infinity,
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12), // ✅ تعديل البادينج
+              padding: const EdgeInsets.symmetric(
+                  horizontal: 16, vertical: 12), // ✅ تعديل البادينج
               decoration: BoxDecoration(
                 color: ColorManager.white,
                 borderRadius: BorderRadius.circular(12),

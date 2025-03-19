@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:taskmate_app/core/resources/font_manager.dart';
 
-
 TextStyle _getTextStyle(double fontSize, FontWeight fontWeight, Color color) {
   return TextStyle(
       fontSize: fontSize,
@@ -33,8 +32,7 @@ TextStyle getLightStyle(
 
 // bold style
 
-TextStyle getBoldStyle(
-    {double fontSize = FontSize.s12, required Color color}) {
+TextStyle getBoldStyle({double fontSize = FontSize.s12, required Color color}) {
   return _getTextStyle(fontSize, FontWeightManager.bold, color);
 }
 

@@ -15,7 +15,7 @@ abstract class AppTheme {
     brightness: Brightness.dark,
     scaffoldBackgroundColor: const Color(0xFF181818),
     colorScheme: const ColorScheme.dark(
-      surface:ColorManager.darkGrey, 
+      surface: ColorManager.darkGrey,
       primary: Color(0xFFF5F5F5),
       secondary: ColorManager.darkGrey, // ✅ لأماكن الإدخا
     ),

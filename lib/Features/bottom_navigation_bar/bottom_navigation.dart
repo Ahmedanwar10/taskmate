@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lucide_icons/lucide_icons.dart';
-import 'package:taskmate_app/Features/all_tasks/views/all_tasks_view.dart';
+import 'package:taskmate_app/Features/home/all_tasks/presentation/views/all_tasks_view.dart';
 import 'package:taskmate_app/Features/calender/presentation/views/calender_view.dart';
 import 'package:taskmate_app/Features/home/widgets/home_view_body.dart';
 import 'package:taskmate_app/Features/profile_options/profile/views/profile_view.dart';
@@ -18,13 +18,13 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
   int currentIndex = 0;
   final PageController pageController = PageController(initialPage: 0);
 
-  final List<Widget> pages = const[
+  final List<Widget> pages = const [
     HomeViewBody(),
     CalendarView(),
     FilesView(),
     ProfileView(),
     SettingView(),
-    ];
+  ];
 
   @override
   void initState() {
@@ -132,7 +132,3 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
     );
   }
 }
-
-
-
-

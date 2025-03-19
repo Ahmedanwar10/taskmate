@@ -12,7 +12,7 @@ import 'package:taskmate_app/generated/l10n.dart';
 
 class UpdataProfileBody extends StatefulWidget {
   const UpdataProfileBody({super.key});
-  
+
   @override
   State<UpdataProfileBody> createState() => _UpdataProfileBodyState();
 }
@@ -39,14 +39,13 @@ class _UpdataProfileBodyState extends State<UpdataProfileBody> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          
           SizedBox(height: MediaQuery.of(context).size.height * 0.1),
           IconButton(
-                    onPressed: () {
-                      GoRouter.of(context).go('/bottomNavBar');
-                    },
-                    icon: const Icon(Icons.arrow_back, color: Colors.black),
-                  ),
+            onPressed: () {
+              GoRouter.of(context).go('/bottomNavBar');
+            },
+            icon: const Icon(Icons.arrow_back, color: Colors.black),
+          ),
           const ProfileAvatar(),
           SizedBox(height: MediaQuery.of(context).size.height * 0.1),
           CustomTextFormField(
@@ -80,17 +79,18 @@ class _UpdataProfileBodyState extends State<UpdataProfileBody> {
               return CustomButton(
                 color: ColorManager.primary,
                 height: 50,
-                text: state is UpdateProfileLoading ? S.of(context).loading : S.of(context).save,
+                text: state is UpdateProfileLoading
+                    ? S.of(context).loading
+                    : S.of(context).save,
                 textStyle: AppStyles.styleSomarSansSemiBold26(context)
                     .copyWith(fontSize: 20, color: Colors.white),
-                onPressed: state is UpdateProfileLoading 
-    ? () {} // ✅ تمرير دالة فارغة بدلاً من `null`
-    : () { 
-        context.read<UpdateProfileCubit>().updateProfile(
-          username: _usernameController.text.trim(),
-        );
-      },
-
+                onPressed: state is UpdateProfileLoading
+                    ? () {} // ✅ تمرير دالة فارغة بدلاً من `null`
+                    : () {
+                        context.read<UpdateProfileCubit>().updateProfile(
+                              username: _usernameController.text.trim(),
+                            );
+                      },
               );
             },
           ),

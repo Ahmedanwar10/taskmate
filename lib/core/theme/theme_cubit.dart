@@ -9,10 +9,9 @@ part 'theme_state.dart';
 
 class ThemeCubit extends Cubit<ThemeState> {
   ThemeCubit()
-      : super(ThemeChanged(
-            Hive.box<int>(kThemeBox).get(0, defaultValue: 0) == 1
-                ? AppTheme.darkMode
-                : AppTheme.lightMode));
+      : super(ThemeChanged(Hive.box<int>(kThemeBox).get(0, defaultValue: 0) == 1
+            ? AppTheme.darkMode
+            : AppTheme.lightMode));
 
   ThemeData get themeData {
     if (state is ThemeChanged) {

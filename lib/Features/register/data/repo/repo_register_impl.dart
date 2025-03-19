@@ -9,15 +9,16 @@ class RegisterRepoImpl implements RegisterRepo {
 
   RegisterRepoImpl({required this.registerService});
   @override
-  Future<Either<Failure, dynamic>> register(
-      {required String username,
-      required String password,
-      }) async {
+  Future<Either<Failure, dynamic>> register({
+    required String username,
+    required String password,
+  }) async {
     try {
       var responseRegister = await registerService.register(
-          username: username, password: password, //confirmPassword: confirmPassword
-          );
-          
+        username: username,
+        password: password, //confirmPassword: confirmPassword
+      );
+
       if (responseRegister == null) {
         return Left(
             ServerFailure("خطأ غير متوقع، لم يتم استلام رد من السيرفر"));

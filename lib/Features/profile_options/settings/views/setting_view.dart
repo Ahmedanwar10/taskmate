@@ -20,9 +20,9 @@ class SettingView extends StatelessWidget {
         ),
         centerTitle: true,
         title: Text(
-                    S.of(context).settings,
-                    style: AppStyles.styleSomarSanssemiBold10(context),
-                  ),
+          S.of(context).settings,
+          style: AppStyles.styleSomarSanssemiBold10(context),
+        ),
       ),
       body: const SettingViewBody(),
     );

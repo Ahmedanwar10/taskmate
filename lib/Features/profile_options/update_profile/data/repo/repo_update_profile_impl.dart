@@ -4,14 +4,16 @@ import 'package:taskmate_app/Features/profile_options/update_profile/data/repo/r
 import 'package:taskmate_app/Features/profile_options/update_profile/data/service/update_profile_repo_service.dart';
 import 'package:taskmate_app/core/failure/failure.dart';
 
-class RepoUpdateProfileImpl implements UpdateProfileRepo{
+class RepoUpdateProfileImpl implements UpdateProfileRepo {
   final UpdateProfileRepoService updateProfileRepoService;
   RepoUpdateProfileImpl({required this.updateProfileRepoService});
   @override
-  Future<Either<Failure, dynamic>> updateProfile({required String username})async {
-  try {
-  var response = await updateProfileRepoService.updateProfile(username: username);
-    if (response == null) {
+  Future<Either<Failure, dynamic>> updateProfile(
+      {required String username}) async {
+    try {
+      var response =
+          await updateProfileRepoService.updateProfile(username: username);
+      if (response == null) {
         return Left(
             ServerFailure("خطأ غير متوقع، لم يتم استلام رد من السيرفر"));
       }

@@ -5,6 +5,6 @@ abstract class RegisterRepo {
   Future<Either<Failure, dynamic>> register({
     required String username,
     required String password,
-  //  required String confirmPassword,
+    //  required String confirmPassword,
   });
 }

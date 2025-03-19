@@ -13,13 +13,16 @@ class SettingViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<LanguageCubitCubit, LanguageCubitState>(
       builder: (context, state) {
-        String currentLanguage = context.read<LanguageCubitCubit>().state is LanguageChange ? (context.read<LanguageCubitCubit>().state as LanguageChange).selectedLanguage : 'ar';
+        String currentLanguage =
+            context.read<LanguageCubitCubit>().state is LanguageChange
+                ? (context.read<LanguageCubitCubit>().state as LanguageChange)
+                    .selectedLanguage
+                : 'ar';
         bool isArabic = currentLanguage == 'ar';
         return Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              
               const SizedBox(height: 30),
               Container(
                 width: double.infinity,
@@ -38,14 +41,16 @@ class SettingViewBody extends StatelessWidget {
                     Switch(
                       value: isArabic,
                       onChanged: (bool newValue) {
-                        context.read<LanguageCubitCubit>().changeLanguage(newValue ? 'ar' : 'en');
+                        context
+                            .read<LanguageCubitCubit>()
+                            .changeLanguage(newValue ? 'ar' : 'en');
                       },
                     ),
                   ],
                 ),
               ),
               const SizedBox(height: 20),
-               const ThemeSetting(),
+              const ThemeSetting(),
             ],
           ),
         );

@@ -6,9 +6,9 @@ abstract class ChangePasswordRepo {
     required String username,
     // ignore: non_constant_identifier_names
     required String current_password,
-     // ignore: non_constant_identifier_names
-     required String new_password,
-     // ignore: non_constant_identifier_names
-     required String new_password_confirm,
-     });
+    // ignore: non_constant_identifier_names
+    required String new_password,
+    // ignore: non_constant_identifier_names
+    required String new_password_confirm,
+  });
 }

@@ -18,17 +18,20 @@ class HeaderHome extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const ProfileAvatar(
-          // يمكنك تمكين التنقل إلى الملف الشخصي عند الضغط عليه
-         // onTap: () => GoRouter.of(context).go('/profile'),
-        ),
+            // يمكنك تمكين التنقل إلى الملف الشخصي عند الضغط عليه
+            // onTap: () => GoRouter.of(context).go('/profile'),
+            ),
         const SizedBox(width: 13),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-             Text(S.of(context).welcome_to_taskMate),
+            Text(S.of(context).welcome_to_taskMate),
             const SizedBox(height: 4.5),
-            Text(username.isNotEmpty ? username : 'Guest', // عرض الاسم أو "Guest" في حال عدم تسجيل الدخول
+            Text(
+                username.isNotEmpty
+                    ? username
+                    : 'Guest', // عرض الاسم أو "Guest" في حال عدم تسجيل الدخول
                 style: const TextStyle(fontWeight: FontWeight.bold)),
           ],
         ),

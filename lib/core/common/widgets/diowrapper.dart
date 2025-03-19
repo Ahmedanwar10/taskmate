@@ -10,7 +10,7 @@ class DioWrapper {
   late final Dio _dio;
   final int _timeOut = 120 * 1000;
   String? _authToken;
-   bool _isRefreshing = false;
+  bool _isRefreshing = false;
   final List<void Function(String)> _tokenQueue = []; // 🔥 تخزين التوكن هنا
 
   /// 🔹 **تهيئة Dio وإضافة Interceptors**
@@ -29,31 +29,29 @@ class DioWrapper {
     ));
   }
 
-Future<void> initialize() async {
-   var box = Hive.box<String>('authBox');
-  
-  String? token = box.get('token');
-  String? refreshToken = box.get('refresh_token');
+  Future<void> initialize() async {
+    var box = Hive.box<String>('authBox');
 
-  print("🔑 Token from Hive: $token");
-  print("🔄 Stored Refresh Token from Hive: $refreshToken");
+    String? token = box.get('token');
+    String? refreshToken = box.get('refresh_token');
 
-  if (token != null) {
-    setToken(token);
-  } else {
-    print("⚠️ No Access Token Found in Hive!");
+    print("🔑 Token from Hive: $token");
+    print("🔄 Stored Refresh Token from Hive: $refreshToken");
+
+    if (token != null) {
+      setToken(token);
+    } else {
+      print("⚠️ No Access Token Found in Hive!");
+    }
   }
-}
-
-
 
   /// 🚀 **Interceptor لتسجيل الطلبات**
- void _onRequest(RequestOptions options, RequestInterceptorHandler handler) {
-  print("🚀 Requesting: ${options.method} ${options.uri}");
-  print("📤 Headers: ${options.headers}"); // ✅ ستظهر هنا أي توكن مُرسل
-  print("📦 Data Sent: ${options.data}");
-  handler.next(options);
-}
+  void _onRequest(RequestOptions options, RequestInterceptorHandler handler) {
+    print("🚀 Requesting: ${options.method} ${options.uri}");
+    print("📤 Headers: ${options.headers}"); // ✅ ستظهر هنا أي توكن مُرسل
+    print("📦 Data Sent: ${options.data}");
+    handler.next(options);
+  }
 
   /// ✅ **Interceptor لتسجيل الاستجابات**
   void _onResponse(Response response, ResponseInterceptorHandler handler) {
@@ -80,56 +78,56 @@ Future<void> initialize() async {
 
   /// 🔄 **تحديث التوكن عند انتهاء صلاحيته**
   Future<String?> handleTokenRefresh() async {
-  if (_isRefreshing) {
-    final completer = Completer<String?>();
-    _tokenQueue.add((newToken) => completer.complete(newToken));
-    return completer.future;
-  }
+    if (_isRefreshing) {
+      final completer = Completer<String?>();
+      _tokenQueue.add((newToken) => completer.complete(newToken));
+      return completer.future;
+    }
 
-  _isRefreshing = true;
-  var box = Hive.box<String>('authBox');
+    _isRefreshing = true;
+    var box = Hive.box<String>('authBox');
 
-  String? refreshToken = box.get('refresh_token');
+    String? refreshToken = box.get('refresh_token');
 
-  if (refreshToken == null) {
-    print("⚠️ No refresh_token found, user needs to re-login.");
-    _isRefreshing = false;
-    return null;
-  }
-
-  try {
-    final response = await _dio.post(
-      'https://nti-production.up.railway.app/api/auth/refresh',
-      options: Options(
-        headers: {
-          "Authorization": "Bearer $refreshToken", // استخدم Refresh Token في الهيدر
-          "Accept": "application/json",
-        },
-      ),
-    );
-
-    if (response.statusCode == 200) {
-      String newAccessToken = response.data['accessToken']; // تأكد من المفتاح الصحيح
-      box.put('token', newAccessToken);
-      setToken(newAccessToken);
-
-      print("✅ Token refreshed successfully!");
-      _tokenQueue.forEach((callback) => callback(newAccessToken));
-      _tokenQueue.clear();
-      return newAccessToken;
-    } else {
-      print("⚠️ Token refresh failed, user needs to re-login.");
+    if (refreshToken == null) {
+      print("⚠️ No refresh_token found, user needs to re-login.");
+      _isRefreshing = false;
       return null;
     }
-  } catch (e) {
-    print("⚠️ Error refreshing token: $e");
-    return null;
-  } finally {
-    _isRefreshing = false;
+
+    try {
+      final response = await _dio.post(
+        'https://nti-production.up.railway.app/api/auth/refresh',
+        options: Options(
+          headers: {
+            "Authorization":
+                "Bearer $refreshToken", // استخدم Refresh Token في الهيدر
+            "Accept": "application/json",
+          },
+        ),
+      );
+
+      if (response.statusCode == 200) {
+        String newAccessToken =
+            response.data['accessToken']; // تأكد من المفتاح الصحيح
+        box.put('token', newAccessToken);
+        setToken(newAccessToken);
+
+        print("✅ Token refreshed successfully!");
+        _tokenQueue.forEach((callback) => callback(newAccessToken));
+        _tokenQueue.clear();
+        return newAccessToken;
+      } else {
+        print("⚠️ Token refresh failed, user needs to re-login.");
+        return null;
+      }
+    } catch (e) {
+      print("⚠️ Error refreshing token: $e");
+      return null;
+    } finally {
+      _isRefreshing = false;
+    }
   }
-}
-
-
 
   /// 🔑 **إدارة التوكن**
   void setToken(String? token) {
@@ -148,7 +146,8 @@ Future<void> initialize() async {
   }
 
   /// 📌 **إرسال `POST`**
-  Future<Response?> postRequest(String endpoint, {Map<String, dynamic>? data, bool requiresAuth = false}) async {
+  Future<Response?> postRequest(String endpoint,
+      {Map<String, dynamic>? data, bool requiresAuth = false}) async {
     return _handleRequest(() async {
       return await _dio.post(
         endpoint,
@@ -163,26 +162,26 @@ Future<void> initialize() async {
 
   /// ✏️ **إرسال `PUT`**
   Future<Response?> putRequest(
-    String endpoint,
-     {Map<String, dynamic>? data,
-      bool requiresAuth = false,
-      bool useRefreshToken = false, // أضف هذا الباراميتر
-
-      }) async {
+    String endpoint, {
+    Map<String, dynamic>? data,
+    bool requiresAuth = false,
+    bool useRefreshToken = false, // أضف هذا الباراميتر
+  }) async {
     return _handleRequest(() async {
       return await _dio.put(
         endpoint,
         data: FormData.fromMap(data ?? {}),
         options: Options(
           contentType: "multipart/form-data",
-          headers: _getHeaders(requiresAuth,useRefreshToken),
+          headers: _getHeaders(requiresAuth, useRefreshToken),
         ),
       );
     });
   }
 
   /// 📡 **إرسال `GET`**
-  Future<Response?> getRequest(String endpoint, {bool requiresAuth = false}) async {
+  Future<Response?> getRequest(String endpoint,
+      {bool requiresAuth = false}) async {
     return _handleRequest(() async {
       return await _dio.get(
         endpoint,
@@ -192,7 +191,8 @@ Future<void> initialize() async {
   }
 
   /// 🗑 **إرسال `DELETE`**
-  Future<Response?> deleteRequest(String endpoint, {bool requiresAuth = false}) async {
+  Future<Response?> deleteRequest(String endpoint,
+      {bool requiresAuth = false}) async {
     return _handleRequest(() async {
       return await _dio.delete(
         endpoint,
@@ -216,21 +216,21 @@ Future<void> initialize() async {
   }
 
   /// 🔥 **إرجاع الهيدرز بناءً على الحاجة لـ Authorization**
- Map<String, String> _getHeaders(bool requiresAuth, [bool useRefreshToken = false]) {
-  final headers = {"Accept": "application/json"};
-  if (requiresAuth) {
-    final box = Hive.box<String>('authBox');
-    final token = useRefreshToken 
-        ? box.get('refresh_token') // 🔑 استخدم 'refresh_token' كمفتاح
-        : box.get('token'); // 🔑 استخدم 'token' للـ Access Token
-    if (token != null) {
-      headers["Authorization"] = "Bearer $token";
+  Map<String, String> _getHeaders(bool requiresAuth,
+      [bool useRefreshToken = false]) {
+    final headers = {"Accept": "application/json"};
+    if (requiresAuth) {
+      final box = Hive.box<String>('authBox');
+      final token = useRefreshToken
+          ? box.get('refresh_token') // 🔑 استخدم 'refresh_token' كمفتاح
+          : box.get('token'); // 🔑 استخدم 'token' للـ Access Token
+      if (token != null) {
+        headers["Authorization"] = "Bearer $token";
+      }
     }
+    print(
+        "🔑 Using ${useRefreshToken ? 'Refresh Token' : 'Access Token'}: ${headers["Authorization"]}");
+
+    return headers;
   }
-  print("🔑 Using ${useRefreshToken ? 'Refresh Token' : 'Access Token'}: ${headers["Authorization"]}");
-
-  return headers;
 }
-}
-
-

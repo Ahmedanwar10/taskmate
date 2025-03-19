@@ -16,9 +16,10 @@ class UpdataProfile extends StatelessWidget {
       backgroundColor: AppStyles.styleSomarSansBold18(context).color,
       body: BlocProvider(
         create: (context) => UpdateProfileCubit(
-          RepoUpdateProfileImpl(updateProfileRepoService: UpdateProfileRepoService(DioWrapper())),
+          RepoUpdateProfileImpl(
+              updateProfileRepoService: UpdateProfileRepoService(DioWrapper())),
         ),
-        child:const  UpdataProfileBody(),
+        child: const UpdataProfileBody(),
       ),
     );
   }

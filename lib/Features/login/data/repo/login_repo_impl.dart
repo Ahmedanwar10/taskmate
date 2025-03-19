@@ -10,18 +10,22 @@ class LoginRepoImpl implements LoginRepo {
   LoginRepoImpl({required this.loginService});
 
   @override
-  Future<Either<Failure, UserModel>> login({ // ✅ غيرت `User` إلى `UserModel`
-    required String username ,
+  Future<Either<Failure, UserModel>> login({
+    // ✅ غيرت `User` إلى `UserModel`
+    required String username,
     required String password,
   }) async {
     try {
-      var response = await loginService.login(email: username , password: password);
-      
+      var response =
+          await loginService.login(email: username, password: password);
+
       if (response == null) {
-        return Left(ServerFailure("خطأ غير متوقع، لم يتم استلام رد من السيرفر"));
+        return Left(
+            ServerFailure("خطأ غير متوقع، لم يتم استلام رد من السيرفر"));
       }
 
-      return Right(UserModel.fromJson(response.data)); // ✅ الآن `Right` يحمل `UserModel`
+      return Right(
+          UserModel.fromJson(response.data)); // ✅ الآن `Right` يحمل `UserModel`
     } catch (e) {
       if (e is DioException) {
         return Left(ServerFailure.fromDioException(e));

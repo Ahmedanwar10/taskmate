@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:taskmate_app/Features/home/widgets/prograss_card.dart';
 import 'package:taskmate_app/Features/home/widgets/task_card_model.dart';
 import 'package:taskmate_app/core/common/widgets/header_home.dart';
-import 'package:go_router/go_router.dart';
 
 class HomeViewBody extends StatefulWidget {
   const HomeViewBody({super.key});
@@ -60,8 +59,6 @@ class _HomeViewBodyState extends State<HomeViewBody> {
           ],
         ),
       ),
-      
-
     );
   }
 }

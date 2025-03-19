@@ -45,7 +45,8 @@ class _ProfileAvatarState extends State<ProfileAvatar> {
                 radius: 30,
                 backgroundImage: image != null
                     ? FileImage(image)
-                    : const AssetImage(Assets.imagesIMG20240225174536993) as ImageProvider,
+                    : const AssetImage(Assets.imagesIMG20240225174536993)
+                        as ImageProvider,
               ),
               Positioned(
                 right: 0,

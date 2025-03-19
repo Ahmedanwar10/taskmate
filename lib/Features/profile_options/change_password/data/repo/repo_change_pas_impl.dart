@@ -16,7 +16,7 @@ class RepoChangePasImpl implements ChangePasswordRepo {
       required String new_password_confirm}) async {
     try {
       var response = await changePasswordService.changePassword(
-        username: username,
+          username: username,
           current_password: current_password,
           new_password: new_password,
           new_password_confirm: new_password_confirm);
