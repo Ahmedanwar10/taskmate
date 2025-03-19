@@ -2,10 +2,12 @@ import 'dart:async';
 
 import 'package:dio/dio.dart';
 import 'package:hive/hive.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class DioWrapper {
   static final DioWrapper _instance = DioWrapper._internal();
   factory DioWrapper() => _instance;
+    Dio get dio => _dio; 
 
   late final Dio _dio;
   final int _timeOut = 120 * 1000;
@@ -180,15 +182,27 @@ class DioWrapper {
   }
 
   /// 📡 **إرسال `GET`**
-  Future<Response?> getRequest(String endpoint,
-      {bool requiresAuth = false}) async {
-    return _handleRequest(() async {
-      return await _dio.get(
-        endpoint,
-        options: Options(headers: _getHeaders(requiresAuth)),
-      );
-    });
-  }
+
+Future<Response?> getRequest(String endpoint, {bool requiresAuth = false}) async {
+  return _handleRequest(() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance(); // ✅ احصل على SharedPreferences
+    String? token = prefs.getString('accessToken'); // ✅ استرجاع التوكن
+    
+    Map<String, String> headers = {};
+    if (requiresAuth && token != null) {
+      headers['Authorization'] = 'Bearer $token';
+    }
+
+    print("🔑 Token in Request Headers: ${headers['Authorization']}");
+
+    return await _dio.get(
+      endpoint,
+      options: Options(headers: headers),
+    );
+  });
+}
+
+
 
   /// 🗑 **إرسال `DELETE`**
   Future<Response?> deleteRequest(String endpoint,

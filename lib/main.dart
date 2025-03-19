@@ -4,6 +4,9 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:taskmate_app/Features/home/all_tasks/data/repo/repo_all_tasks_impl.dart';
+import 'package:taskmate_app/Features/home/all_tasks/data/service/all_tasks_api_service.dart';
+import 'package:taskmate_app/Features/home/all_tasks/presentation/managers/all_tasks_cubit.dart';
 import 'package:taskmate_app/Features/login/data/model/user_model/user.dart';
 import 'package:taskmate_app/Features/login/data/model/user_model_hive/user_model_h.dart';
 import 'package:taskmate_app/Features/login/data/repo/login_repo_impl.dart';
@@ -57,6 +60,9 @@ void main() async {
   runApp(
     MultiBlocProvider(
       providers: [
+         BlocProvider(create: (context) => AllTasksCubit(
+          RepoAllTasksImpl(allTasksApiService: AllTasksApiService(DioWrapper())),
+        )),
         BlocProvider<LoginCubit>(
           create: (context) => LoginCubit(
             LoginRepoImpl(

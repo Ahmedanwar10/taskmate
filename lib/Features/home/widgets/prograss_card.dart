@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:taskmate_app/core/app_style.dart';
 import 'package:taskmate_app/core/common/widgets/custtom_button.dart';
+import 'package:taskmate_app/core/constants/color_manager.dart';
 import 'package:taskmate_app/generated/l10n.dart';
 
 class ProgressCard extends StatelessWidget {
@@ -21,7 +22,7 @@ class ProgressCard extends StatelessWidget {
       height: 150,
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color(0xFF5A2ECC), // لون الخلفية البنفسجي
+        color: ColorManager.purple, // لون الخلفية البنفسجي
         borderRadius: BorderRadius.circular(20),
       ),
       child: Row(

@@ -4,25 +4,34 @@ import 'package:taskmate_app/core/common/widgets/diowrapper.dart';
 
 class AllTasksApiService {
   final DioWrapper _dioWrapper;
-
+   
   AllTasksApiService(this._dioWrapper);
 
-  Future<ModelAll?> fetchAllTasks() async {
-    try {
-      Response? response = await _dioWrapper.getRequest(
-        '/tasks', // تأكد أن هذا هو المسار الصحيح للـ API
-        requiresAuth: true, // إذا كانت تحتاج إلى توثيق
-      );
+Future<ModelAll?> fetchAllTasks() async {
+  try {
+    
+    print("📡 Sending GET request to /tasks...");
+print("🔑 Token in Request Headers: ${_dioWrapper.dio.options.headers['Authorization']}");
 
-      if (response != null && response.statusCode == 200) {
+    Response? response = await _dioWrapper.getRequest('/tasks', requiresAuth: true);
+
+    if (response != null) {
+      print("✅ Response received: ${response.statusCode}");
+      print("📥 Data: ${response.data}");
+
+      if (response.statusCode == 200) {
         return ModelAll.fromJson(response.data);
       } else {
-        print("⚠️ Failed to fetch tasks: ${response?.statusCode}");
-        return null;
+        print("⚠️ Failed to fetch tasks: ${response.statusCode}");
       }
-    } catch (e) {
-      print("⚠️ Error fetching tasks: $e");
-      return null;
+    } else {
+      print("❌ Response is null. Possible network issue.");
     }
+    return null;
+  } catch (e) {
+    print("❌ Exception: $e");
+    return null;
   }
+}
+
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:taskmate_app/core/constants/color_manager.dart';
 
 class TaskCard extends StatelessWidget {
   final String title;
@@ -19,7 +20,7 @@ class TaskCard extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       decoration: BoxDecoration(
-        color: Colors.green.shade100,
+        color: ColorManager.purple .withOpacity(0.1),
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
@@ -35,16 +36,19 @@ class TaskCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            /// ✅ عنوان المهمة
+            /// ✅ عنوان المهمة مع معالجة مشكلة الـ Overflow
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  title,
-                  style: const TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black54,
+                Expanded(
+                  child: Text(
+                    title,
+                    style: const TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black54,
+                    ),
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ),
                 Column(
@@ -72,13 +76,15 @@ class TaskCard extends StatelessWidget {
             ),
             const SizedBox(height: 8),
 
-            /// ✅ وصف المهمة
+            /// ✅ وصف المهمة مع تحديد عدد الأسطر لمنع الـ Overflow
             Text(
               description,
               style: const TextStyle(
                 fontSize: 16,
                 color: Colors.black87,
               ),
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
             ),
           ],
         ),

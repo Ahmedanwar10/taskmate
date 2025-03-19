@@ -11,13 +11,28 @@ class AllTasksCubit extends Cubit<AllTasksState> {
   AllTasksCubit(this.repoAllTasks) : super(AllTasksInitial());
 
   Future<void> fetchAllTasks() async {
-    emit(AllTasksLoading());
+  emit(AllTasksLoading());
 
+  try {
     final result = await repoAllTasks.fetchAllTasks();
+
+    if (result == null) {
+      emit(AllTasksError("لم يتم استرجاع البيانات، تحقق من API"));
+      return;
+    }
 
     result.fold(
       (failure) => emit(AllTasksError(failure.errorMessage)),
-      (modelAll) => emit(AllTasksLoaded(modelAll)),
+      (modelAll) {
+        if (modelAll.tasks == null || modelAll.tasks!.isEmpty) {
+          emit(AllTasksError("لا توجد مهام متاحة"));
+        } else {
+          emit(AllTasksLoaded(modelAll));
+        }
+      },
     );
+  } catch (e) {
+    emit(AllTasksError("خطأ غير متوقع: $e"));
   }
+}
 }
