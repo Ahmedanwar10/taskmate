@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:taskmate_app/Features/add_tasks/presentation/views/add_task_view.dart';
 import 'package:taskmate_app/Features/bottom_navigation_bar/bottom_navigation.dart';
 import 'package:taskmate_app/Features/forgotpassword/forgot_password.dart';
 import 'package:taskmate_app/Features/home/home_view.dart';
@@ -27,6 +28,7 @@ class AppRoutes {
   static const String bottomNavBarRoute = '/bottomNavBar';
   static const String changePasswordRoute = '/changePassword';
   static const String updateProfileRoute = '/updateProfile';
+  static const String addTaskRoute = '/addTask';
 
   static final router = GoRouter(
     routes: [
@@ -73,6 +75,10 @@ class AppRoutes {
         GoRoute(
         path: updateProfileRoute,
         builder: (context, state) => const UpdataProfile(),
+      ),
+      GoRoute(
+        path: addTaskRoute,
+        builder: (context, state) => const AddTaskView(),
       ),
     ],
   );

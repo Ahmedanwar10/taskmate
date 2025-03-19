@@ -2,56 +2,86 @@ import 'package:flutter/material.dart';
 
 class TaskCard extends StatelessWidget {
   final String title;
-  final String subtitle;
-  final Color backgroundColor;
-  final Color progressColor;
-  final double progress;
-  final Widget icon;
-  final TextStyle? textStyle;
+  final String description;
+  final String date;
+  final String time;
 
   const TaskCard({
     super.key,
     required this.title,
-    required this.subtitle,
-    required this.backgroundColor,
-    required this.progressColor,
-    required this.progress,
-    required this.icon,
-    this.textStyle,
+    required this.description,
+    required this.date,
+    required this.time,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 250,
-      padding: const EdgeInsets.all(16),
+      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       decoration: BoxDecoration(
-        color: backgroundColor,
-        borderRadius: BorderRadius.circular(22),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(subtitle, style: textStyle),
-              icon,
-            ],
-          ),
-          const SizedBox(height: 8),
-          Text(title, style: textStyle),
-          const SizedBox(height: 12),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(6),
-            child: LinearProgressIndicator(
-              value: progress,
-              backgroundColor: Colors.white,
-              valueColor: AlwaysStoppedAnimation(progressColor),
-              minHeight: 6,
-            ),
+        color: Colors.green.shade100,
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            blurRadius: 6,
+            spreadRadius: 2,
+            offset: const Offset(0, 4),
           ),
         ],
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            /// ✅ عنوان المهمة
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  title,
+                  style: const TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black54,
+                  ),
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      date,
+                      style: const TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black54,
+                      ),
+                    ),
+                    Text(
+                      time,
+                      style: const TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black54,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            const SizedBox(height: 8),
+
+            /// ✅ وصف المهمة
+            Text(
+              description,
+              style: const TextStyle(
+                fontSize: 16,
+                color: Colors.black87,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

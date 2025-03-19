@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:taskmate_app/Features/all_tasks/views/all_tasks_view.dart';
 import 'package:taskmate_app/Features/calender/presentation/views/calender_view.dart';
@@ -100,7 +101,9 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
               shape: const CircleBorder(),
               backgroundColor: Colors.purple,
               elevation: 5,
-              onPressed: () {},
+              onPressed: () {
+                GoRouter.of(context).go('/addTask');
+              },
               child: const Icon(Icons.add, color: Colors.white, size: 30),
             ),
           ),
